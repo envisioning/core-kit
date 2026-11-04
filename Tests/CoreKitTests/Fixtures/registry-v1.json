@@ -1,0 +1,5581 @@
+{
+  "generated": "Generated from src/lib/crm/registry. Do not edit by hand.",
+  "space": "crm",
+  "schemaVersion": 1,
+  "registryVersion": 1,
+  "metadataSchemaVersion": 5,
+  "grantedScopes": null,
+  "entities": [
+    {
+      "id": "organizations",
+      "singularLabel": "Organization",
+      "pluralLabel": "Organizations",
+      "icon": "building.2",
+      "primaryField": "name",
+      "secondaryFields": [
+        "country",
+        "industry"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "basic_info",
+          "label": "Basic Information",
+          "kind": "section"
+        },
+        {
+          "name": "name",
+          "label": "Organization Name",
+          "kind": "text",
+          "required": true,
+          "placeholder": "Enter organization name",
+          "section": "basic_info",
+          "maxLength": 100
+        },
+        {
+          "name": "legal_name",
+          "label": "Legal Name",
+          "kind": "text",
+          "placeholder": "Legal business name (if different)",
+          "section": "basic_info",
+          "maxLength": 200
+        },
+        {
+          "name": "entity",
+          "label": "Entity",
+          "kind": "text",
+          "placeholder": "Division or subsidiary",
+          "section": "basic_info",
+          "maxLength": 500
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "kind": "country",
+          "placeholder": "Select country",
+          "section": "basic_info",
+          "optionsSource": "countries"
+        },
+        {
+          "name": "industry",
+          "label": "Industry",
+          "kind": "industry",
+          "placeholder": "Select industry",
+          "section": "basic_info",
+          "optionsSource": "industries"
+        },
+        {
+          "name": "is_agency",
+          "label": "Is Agency",
+          "kind": "toggle",
+          "section": "basic_info"
+        },
+        {
+          "name": "is_existing_client",
+          "label": "Is Existing Client",
+          "kind": "toggle",
+          "section": "basic_info"
+        },
+        {
+          "name": "is_partner",
+          "label": "Is Partner",
+          "kind": "toggle",
+          "section": "basic_info"
+        },
+        {
+          "name": "address_details",
+          "label": "Address",
+          "kind": "section"
+        },
+        {
+          "name": "address",
+          "label": "Address",
+          "kind": "text",
+          "section": "address_details",
+          "maxLength": 500
+        },
+        {
+          "name": "postcode",
+          "label": "Postcode",
+          "kind": "text",
+          "section": "address_details",
+          "maxLength": 20
+        },
+        {
+          "name": "city",
+          "label": "City",
+          "kind": "text",
+          "section": "address_details",
+          "maxLength": 100
+        },
+        {
+          "name": "vat_id",
+          "label": "VAT ID",
+          "kind": "text",
+          "section": "address_details",
+          "maxLength": 50
+        },
+        {
+          "name": "tax_id",
+          "label": "Tax ID",
+          "kind": "text",
+          "section": "address_details",
+          "maxLength": 50
+        },
+        {
+          "name": "online_presence",
+          "label": "Online Presence",
+          "kind": "section"
+        },
+        {
+          "name": "website",
+          "label": "Website",
+          "kind": "url",
+          "placeholder": "https://example.com",
+          "section": "online_presence"
+        },
+        {
+          "name": "linkedin_url",
+          "label": "LinkedIn URL",
+          "kind": "url",
+          "placeholder": "https://linkedin.com/company/...",
+          "section": "online_presence"
+        },
+        {
+          "name": "profile_image_url",
+          "label": "Profile Image URL",
+          "kind": "url",
+          "placeholder": "Company profile image URL",
+          "section": "online_presence"
+        },
+        {
+          "name": "company_profile",
+          "label": "Company Profile",
+          "kind": "section"
+        },
+        {
+          "name": "size",
+          "label": "Company Size",
+          "kind": "select",
+          "placeholder": "Select size",
+          "options": [
+            {
+              "value": "1-10",
+              "label": "1-10"
+            },
+            {
+              "value": "11-50",
+              "label": "11-50"
+            },
+            {
+              "value": "51-200",
+              "label": "51-200"
+            },
+            {
+              "value": "201-500",
+              "label": "201-500"
+            },
+            {
+              "value": "501-1000",
+              "label": "501-1000"
+            },
+            {
+              "value": "1001+",
+              "label": "1001+"
+            }
+          ],
+          "section": "company_profile"
+        },
+        {
+          "name": "founded",
+          "label": "Founded",
+          "kind": "text",
+          "placeholder": "e.g. 2010",
+          "section": "company_profile",
+          "maxLength": 50
+        },
+        {
+          "name": "hq_location",
+          "label": "HQ Location",
+          "kind": "text",
+          "placeholder": "City, Country",
+          "section": "company_profile",
+          "maxLength": 200
+        },
+        {
+          "name": "company_type",
+          "label": "Company Type",
+          "kind": "text",
+          "placeholder": "e.g. Privately Held",
+          "section": "company_profile",
+          "maxLength": 100
+        },
+        {
+          "name": "logo_image_url",
+          "label": "Logo Image URL",
+          "kind": "url",
+          "placeholder": "Company logo URL",
+          "section": "company_profile"
+        },
+        {
+          "name": "notes_section",
+          "label": "Notes",
+          "kind": "section"
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "kind": "markdown",
+          "section": "notes_section",
+          "colSpan": 2,
+          "maxLength": 10000
+        }
+      ],
+      "related": [
+        {
+          "id": "contacts",
+          "label": "Contacts",
+          "entity": "contacts",
+          "icon": "person.2",
+          "emptyMessage": "No contacts",
+          "presentation": "list",
+          "create": {
+            "label": "Add Contact",
+            "webPath": "/dashboard/contacts/new",
+            "prefillField": "organization_id"
+          },
+          "allowsUnlink": true
+        },
+        {
+          "id": "leads",
+          "label": "Leads",
+          "entity": "leads",
+          "icon": "target",
+          "emptyMessage": "No leads",
+          "presentation": "list",
+          "create": {
+            "label": "Add Lead",
+            "webPath": "/dashboard/leads/new",
+            "prefillField": "organization_id"
+          },
+          "allowsUnlink": true
+        },
+        {
+          "id": "projects",
+          "label": "Projects",
+          "entity": "projects",
+          "icon": "folder",
+          "emptyMessage": "No projects",
+          "presentation": "list",
+          "create": {
+            "label": "Add Project",
+            "webPath": "/dashboard/projects/new",
+            "prefillField": "organization_id"
+          },
+          "allowsUnlink": true
+        },
+        {
+          "id": "licenses",
+          "label": "Licenses",
+          "entity": "licenses",
+          "icon": "receipt",
+          "emptyMessage": "No licenses",
+          "presentation": "list",
+          "create": {
+            "label": "Add License",
+            "webPath": "/dashboard/licenses/new",
+            "prefillField": "organization_id"
+          }
+        },
+        {
+          "id": "signals_worksessions",
+          "label": "Work Sessions",
+          "entity": "signals_worksessions",
+          "icon": "rectangle.on.rectangle",
+          "emptyMessage": "No work sessions",
+          "presentation": "timeline"
+        }
+      ]
+    },
+    {
+      "id": "contacts",
+      "singularLabel": "Contact",
+      "pluralLabel": "Contacts",
+      "icon": "person.2",
+      "primaryField": "name",
+      "secondaryFields": [
+        "email",
+        "company_role"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [
+        {
+          "name": "source_key",
+          "label": "Source",
+          "kind": "select",
+          "queryParameter": "source_key",
+          "optionsSource": "contact_sources",
+          "optionsPath": "/api/agent/contact-sources"
+        }
+      ],
+      "fields": [
+        {
+          "name": "basic_info",
+          "label": "Basic Information",
+          "kind": "section"
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "kind": "text",
+          "required": true,
+          "placeholder": "Enter contact name",
+          "section": "basic_info",
+          "maxLength": 100
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "kind": "email",
+          "placeholder": "Enter email address",
+          "section": "basic_info"
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "relationEntity": "organizations",
+          "optionsSource": "organizations",
+          "placeholder": "Select organization",
+          "section": "basic_info"
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "kind": "country",
+          "optionsSource": "countries",
+          "placeholder": "Select country",
+          "section": "basic_info"
+        },
+        {
+          "name": "acquisition",
+          "label": "Acquisition",
+          "kind": "section",
+          "createOnly": true
+        },
+        {
+          "name": "source_key",
+          "label": "How did this contact enter the CRM?",
+          "kind": "select",
+          "section": "acquisition",
+          "required": true,
+          "optionsSource": "contact_sources",
+          "optionsPath": "/api/agent/contact-sources?selection=manual",
+          "storage": "computed",
+          "createOnly": true
+        },
+        {
+          "name": "birthday_info",
+          "label": "Birthday",
+          "kind": "section"
+        },
+        {
+          "name": "birthday_month",
+          "label": "Birth Month",
+          "kind": "number",
+          "placeholder": "1-12",
+          "section": "birthday_info",
+          "min": 1,
+          "max": 12
+        },
+        {
+          "name": "birthday_day",
+          "label": "Birth Day",
+          "kind": "number",
+          "placeholder": "1-31",
+          "section": "birthday_info",
+          "min": 1,
+          "max": 31
+        },
+        {
+          "name": "birthday_year",
+          "label": "Birth Year (Optional)",
+          "kind": "number",
+          "placeholder": "YYYY",
+          "section": "birthday_info",
+          "min": 1,
+          "max": 9999
+        },
+        {
+          "name": "professional_info",
+          "label": "Professional Information",
+          "kind": "section"
+        },
+        {
+          "name": "corporate_email",
+          "label": "Work Email",
+          "kind": "email",
+          "placeholder": "Work email address",
+          "section": "professional_info"
+        },
+        {
+          "name": "company_role",
+          "label": "Role at Company",
+          "kind": "text",
+          "placeholder": "Enter job title or role",
+          "section": "professional_info",
+          "maxLength": 200
+        },
+        {
+          "name": "headline",
+          "label": "Headline",
+          "kind": "text",
+          "placeholder": "Professional headline",
+          "section": "professional_info",
+          "maxLength": 200
+        },
+        {
+          "name": "location",
+          "label": "Location",
+          "kind": "text",
+          "placeholder": "City, Country",
+          "section": "professional_info",
+          "maxLength": 200
+        },
+        {
+          "name": "online_presence",
+          "label": "Online Presence",
+          "kind": "section"
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "kind": "text",
+          "placeholder": "+1234567890",
+          "section": "online_presence",
+          "maxLength": 32
+        },
+        {
+          "name": "linkedin_url",
+          "label": "LinkedIn URL",
+          "kind": "url",
+          "placeholder": "https://linkedin.com/in/...",
+          "section": "online_presence"
+        },
+        {
+          "name": "profile_image_url",
+          "label": "Profile Image URL",
+          "kind": "url",
+          "placeholder": "Profile image URL",
+          "section": "online_presence"
+        },
+        {
+          "name": "signals_outreach",
+          "label": "Signals Outreach",
+          "kind": "section"
+        },
+        {
+          "name": "preferred_language",
+          "label": "Language",
+          "kind": "select",
+          "section": "signals_outreach",
+          "options": [
+            {
+              "value": "en",
+              "label": "English"
+            },
+            {
+              "value": "pt",
+              "label": "Portuguese"
+            }
+          ]
+        },
+        {
+          "name": "signals_outreach_status",
+          "label": "Signals Status",
+          "kind": "select",
+          "section": "signals_outreach",
+          "options": [
+            {
+              "value": "",
+              "label": "Not selected"
+            },
+            {
+              "value": "to_notify",
+              "label": "To notify"
+            },
+            {
+              "value": "notified",
+              "label": "Notified"
+            },
+            {
+              "value": "replied",
+              "label": "Replied"
+            },
+            {
+              "value": "interested",
+              "label": "Interested"
+            },
+            {
+              "value": "not_interested",
+              "label": "Not interested"
+            }
+          ]
+        },
+        {
+          "name": "profile_characteristics",
+          "label": "Profile Characteristics",
+          "kind": "section"
+        },
+        {
+          "name": "characteristics",
+          "label": "Characteristics",
+          "kind": "characteristics",
+          "section": "profile_characteristics",
+          "colSpan": 3
+        }
+      ],
+      "related": [
+        {
+          "id": "organization",
+          "label": "Organization",
+          "entity": "organizations",
+          "icon": "building.2",
+          "emptyMessage": "No organization",
+          "presentation": "compact"
+        },
+        {
+          "id": "tasks",
+          "label": "Tasks",
+          "entity": "tasks",
+          "icon": "checkmark.square",
+          "emptyMessage": "No tasks",
+          "presentation": "list",
+          "create": {
+            "label": "Add Task",
+            "webPath": "/dashboard/tasks/new",
+            "prefillField": "contact_id"
+          }
+        },
+        {
+          "id": "interactions",
+          "label": "Interactions",
+          "entity": "interactions",
+          "icon": "bubble.left.and.bubble.right",
+          "emptyMessage": "No interactions",
+          "presentation": "timeline",
+          "create": {
+            "label": "Add Interaction",
+            "webPath": "/dashboard/interactions/new",
+            "prefillField": "contact_id"
+          }
+        },
+        {
+          "id": "events",
+          "label": "Events",
+          "entity": "events",
+          "icon": "calendar",
+          "emptyMessage": "No events",
+          "presentation": "list"
+        },
+        {
+          "id": "sources",
+          "label": "Sources",
+          "entity": "contact_source_events",
+          "icon": "arrow.triangle.branch",
+          "emptyMessage": "No source history",
+          "presentation": "timeline"
+        }
+      ]
+    },
+    {
+      "id": "leads",
+      "singularLabel": "Lead",
+      "pluralLabel": "Leads",
+      "icon": "target",
+      "primaryField": "title",
+      "secondaryFields": [
+        "status",
+        "start_date"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "board": {
+        "field": "status"
+      },
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "qualification",
+          "label": "Qualification",
+          "kind": "section"
+        },
+        {
+          "name": "characteristics",
+          "label": "Qualification Checklist",
+          "kind": "characteristics",
+          "section": "qualification"
+        },
+        {
+          "name": "lead",
+          "label": "Lead",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "lead",
+          "maxLength": 100
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "select",
+          "section": "lead",
+          "options": [
+            {
+              "value": "Conversations",
+              "label": "Conversations"
+            },
+            {
+              "value": "Opportunity Identified",
+              "label": "Opportunity Identified"
+            },
+            {
+              "value": "Proposal Out",
+              "label": "Proposal Out"
+            },
+            {
+              "value": "Active Negotiation",
+              "label": "Active Negotiation"
+            },
+            {
+              "value": "Waiting on External Factor",
+              "label": "Waiting on External Factor"
+            },
+            {
+              "value": "Closed Won",
+              "label": "Closed Won"
+            },
+            {
+              "value": "Closed Lost",
+              "label": "Closed Lost"
+            }
+          ]
+        },
+        {
+          "name": "start_date",
+          "label": "Start Date",
+          "kind": "date",
+          "section": "lead",
+          "required": true
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "lead",
+          "relationEntity": "organizations"
+        },
+        {
+          "name": "contact_id",
+          "label": "Contact",
+          "kind": "relation",
+          "section": "lead",
+          "relationEntity": "contacts"
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "kind": "markdown",
+          "section": "lead"
+        }
+      ],
+      "related": [
+        {
+          "id": "offers",
+          "label": "Offers",
+          "entity": "offers",
+          "icon": "doc.text",
+          "emptyMessage": "No offers",
+          "presentation": "list",
+          "create": {
+            "label": "Create Offer",
+            "webPath": "/dashboard/offers/new",
+            "prefillField": "lead_id"
+          }
+        },
+        {
+          "id": "licenses",
+          "label": "Licenses",
+          "entity": "licenses",
+          "icon": "receipt",
+          "emptyMessage": "No licenses",
+          "presentation": "list",
+          "create": {
+            "label": "Create License",
+            "webPath": "/dashboard/licenses/new",
+            "prefillField": "lead_id"
+          }
+        },
+        {
+          "id": "tasks",
+          "label": "Tasks",
+          "entity": "tasks",
+          "icon": "checkmark.square",
+          "emptyMessage": "No tasks",
+          "presentation": "list",
+          "create": {
+            "label": "Add Task",
+            "webPath": "/dashboard/tasks/new",
+            "prefillField": "lead_id"
+          }
+        },
+        {
+          "id": "interactions",
+          "label": "Interactions",
+          "entity": "interactions",
+          "icon": "bubble.left.and.bubble.right",
+          "emptyMessage": "No interactions",
+          "presentation": "timeline",
+          "create": {
+            "label": "Add Interaction",
+            "webPath": "/dashboard/interactions/new",
+            "prefillField": "lead_id"
+          }
+        },
+        {
+          "id": "projects",
+          "label": "Projects",
+          "entity": "projects",
+          "icon": "folder",
+          "emptyMessage": "No projects",
+          "presentation": "list",
+          "create": {
+            "label": "Create Project",
+            "webPath": "/dashboard/projects/new",
+            "prefillField": "lead_id"
+          }
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "singularLabel": "Project",
+      "pluralLabel": "Projects",
+      "icon": "folder",
+      "primaryField": "title",
+      "secondaryFields": [
+        "status",
+        "start_date",
+        "end_date"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "board": {
+        "field": "status"
+      },
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "basic",
+          "label": "Basic Information",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Project Title",
+          "kind": "text",
+          "section": "basic",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "kind": "textarea",
+          "section": "basic",
+          "hidden": true,
+          "maxLength": 2000
+        },
+        {
+          "name": "url",
+          "label": "Project URL",
+          "kind": "url",
+          "section": "basic"
+        },
+        {
+          "name": "evid",
+          "label": "EVID",
+          "kind": "text",
+          "section": "basic",
+          "maxLength": 100
+        },
+        {
+          "name": "is_internal",
+          "label": "Envisioning Internal",
+          "kind": "toggle",
+          "section": "basic"
+        },
+        {
+          "name": "relationships",
+          "label": "Relationships",
+          "kind": "section"
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "organizations"
+        },
+        {
+          "name": "lead_id",
+          "label": "Related Lead",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "leads"
+        },
+        {
+          "name": "license_id",
+          "label": "Related License",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "licenses"
+        },
+        {
+          "name": "contact_ids",
+          "label": "Contacts",
+          "kind": "multiRelation",
+          "section": "relationships",
+          "relationEntity": "contacts",
+          "relationKey": "contacts",
+          "storage": "junction"
+        },
+        {
+          "name": "timeline",
+          "label": "Timeline",
+          "kind": "section"
+        },
+        {
+          "name": "start_date",
+          "label": "Start Date",
+          "kind": "date",
+          "section": "timeline"
+        },
+        {
+          "name": "end_date",
+          "label": "End Date",
+          "kind": "date",
+          "section": "timeline"
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "select",
+          "section": "timeline",
+          "options": [
+            {
+              "value": "Active",
+              "label": "Active"
+            },
+            {
+              "value": "Paused",
+              "label": "Paused"
+            },
+            {
+              "value": "Archived",
+              "label": "Archived"
+            }
+          ]
+        },
+        {
+          "name": "last_viewed_at",
+          "label": "Last Viewed",
+          "kind": "datetime",
+          "section": "timeline",
+          "readOnly": true
+        },
+        {
+          "name": "notes",
+          "label": "Project Notes",
+          "kind": "section"
+        },
+        {
+          "name": "contract",
+          "label": "Contract",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 5000
+        },
+        {
+          "name": "analytics",
+          "label": "Analytics",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 5000
+        },
+        {
+          "name": "authentication",
+          "label": "Authentication",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 5000
+        },
+        {
+          "name": "specs",
+          "label": "Specs",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 2000
+        },
+        {
+          "name": "technical",
+          "label": "Technical",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 2000
+        },
+        {
+          "name": "research",
+          "label": "Research",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 2000
+        },
+        {
+          "name": "design",
+          "label": "Design",
+          "kind": "textarea",
+          "section": "notes",
+          "maxLength": 2000
+        }
+      ],
+      "related": [
+        {
+          "id": "tasks",
+          "label": "Tasks",
+          "entity": "tasks",
+          "icon": "checkmark.square",
+          "emptyMessage": "No tasks",
+          "presentation": "list",
+          "create": {
+            "label": "Add Task",
+            "webPath": "/dashboard/tasks/new",
+            "prefillField": "project_id"
+          }
+        },
+        {
+          "id": "interactions",
+          "label": "Interactions",
+          "entity": "interactions",
+          "icon": "bubble.left.and.bubble.right",
+          "emptyMessage": "No interactions",
+          "presentation": "timeline",
+          "create": {
+            "label": "Add Interaction",
+            "webPath": "/dashboard/interactions/new",
+            "prefillField": "project_id"
+          }
+        },
+        {
+          "id": "milestones",
+          "label": "Milestones",
+          "entity": "milestones",
+          "icon": "flag",
+          "emptyMessage": "No milestones",
+          "presentation": "timeline",
+          "create": {
+            "label": "Add Milestone",
+            "webPath": "/dashboard/milestones/new",
+            "prefillField": "project_id"
+          }
+        },
+        {
+          "id": "deliverables",
+          "label": "Deliverables",
+          "entity": "services",
+          "icon": "shippingbox",
+          "emptyMessage": "No deliverables",
+          "presentation": "cards"
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "singularLabel": "Service",
+      "pluralLabel": "Services",
+      "icon": "square.stack.3d.up",
+      "primaryField": "name",
+      "secondaryFields": [
+        "group_type",
+        "price"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "basic",
+          "label": "Basic Information",
+          "kind": "section"
+        },
+        {
+          "name": "name",
+          "label": "Service Name",
+          "kind": "text",
+          "section": "basic",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "summary",
+          "label": "Summary",
+          "kind": "text",
+          "section": "basic",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "kind": "textarea",
+          "section": "basic",
+          "required": true,
+          "maxLength": 2000
+        },
+        {
+          "name": "group_type",
+          "label": "Service Group",
+          "kind": "select",
+          "section": "basic",
+          "options": [
+            {
+              "value": "Base",
+              "label": "Base"
+            },
+            {
+              "value": "Research",
+              "label": "Research"
+            },
+            {
+              "value": "Optional",
+              "label": "Optional"
+            },
+            {
+              "value": "License",
+              "label": "License"
+            }
+          ]
+        },
+        {
+          "name": "category",
+          "label": "Category",
+          "kind": "select",
+          "section": "basic",
+          "hidden": true,
+          "options": [
+            {
+              "value": "none",
+              "label": "No category"
+            },
+            {
+              "value": "visualization",
+              "label": "Visualization"
+            },
+            {
+              "value": "architecture",
+              "label": "Architecture"
+            },
+            {
+              "value": "signals",
+              "label": "Signals"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "label": "Icon",
+          "kind": "text",
+          "section": "basic",
+          "maxLength": 100
+        },
+        {
+          "name": "details",
+          "label": "Service Details",
+          "kind": "section"
+        },
+        {
+          "name": "price",
+          "label": "Price",
+          "kind": "number",
+          "section": "details",
+          "required": true
+        },
+        {
+          "name": "is_recurring",
+          "label": "Recurring",
+          "kind": "toggle",
+          "section": "details"
+        },
+        {
+          "name": "allow_multiple",
+          "label": "Allow Multiple",
+          "kind": "toggle",
+          "section": "details"
+        },
+        {
+          "name": "is_public",
+          "label": "Public",
+          "kind": "toggle",
+          "section": "details"
+        },
+        {
+          "name": "is_default",
+          "label": "Default",
+          "kind": "toggle",
+          "section": "details"
+        },
+        {
+          "name": "url",
+          "label": "Service URL",
+          "kind": "url",
+          "section": "details"
+        }
+      ],
+      "related": [
+        {
+          "id": "offers",
+          "label": "Offers using this service",
+          "entity": "offers",
+          "icon": "doc.text",
+          "emptyMessage": "No offers are currently using this service",
+          "presentation": "list",
+          "create": {
+            "label": "Create Offer",
+            "webPath": "/dashboard/offers/new"
+          }
+        }
+      ]
+    },
+    {
+      "id": "milestones",
+      "singularLabel": "Milestone",
+      "pluralLabel": "Milestones",
+      "icon": "flag",
+      "primaryField": "title",
+      "secondaryFields": [
+        "due_date",
+        "start_time"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "milestone",
+          "label": "Milestone",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "milestone",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "due_date",
+          "label": "Date",
+          "kind": "date",
+          "section": "milestone"
+        },
+        {
+          "name": "start_time",
+          "label": "Start Time",
+          "kind": "text",
+          "section": "milestone",
+          "placeholder": "HH:MM"
+        },
+        {
+          "name": "timezone",
+          "label": "Timezone",
+          "kind": "select",
+          "section": "milestone",
+          "options": [
+            {
+              "value": "",
+              "label": "Date only"
+            },
+            {
+              "value": "Europe/Amsterdam",
+              "label": "Europe/Amsterdam"
+            },
+            {
+              "value": "Europe/London",
+              "label": "Europe/London"
+            },
+            {
+              "value": "America/New_York",
+              "label": "America/New_York"
+            },
+            {
+              "value": "America/Los_Angeles",
+              "label": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "name": "project_id",
+          "label": "Project",
+          "kind": "relation",
+          "section": "milestone",
+          "relationEntity": "projects",
+          "required": true
+        },
+        {
+          "name": "location",
+          "label": "Location",
+          "kind": "select",
+          "section": "milestone",
+          "options": [
+            {
+              "value": "online",
+              "label": "Online"
+            },
+            {
+              "value": "offline",
+              "label": "Offline"
+            }
+          ]
+        },
+        {
+          "name": "place",
+          "label": "Place",
+          "kind": "text",
+          "section": "milestone",
+          "maxLength": 200
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "kind": "textarea",
+          "section": "milestone",
+          "maxLength": 2000
+        }
+      ],
+      "related": [
+        {
+          "id": "tasks",
+          "label": "Tasks",
+          "entity": "tasks",
+          "icon": "checkmark.square",
+          "emptyMessage": "No tasks",
+          "presentation": "list",
+          "create": {
+            "label": "Add Task",
+            "webPath": "/dashboard/tasks/new",
+            "prefillField": "milestone_id"
+          }
+        }
+      ]
+    },
+    {
+      "id": "licenses",
+      "singularLabel": "License",
+      "pluralLabel": "Licenses",
+      "icon": "receipt",
+      "primaryField": "product",
+      "secondaryFields": [
+        "plan_type",
+        "renewal_date",
+        "amount_eur"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "license",
+          "label": "License",
+          "kind": "section"
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "license",
+          "relationEntity": "organizations"
+        },
+        {
+          "name": "lead_id",
+          "label": "Lead",
+          "kind": "relation",
+          "section": "license",
+          "relationEntity": "leads"
+        },
+        {
+          "name": "offer_id",
+          "label": "Offer",
+          "kind": "relation",
+          "section": "license",
+          "relationEntity": "offers"
+        },
+        {
+          "name": "product",
+          "label": "Product",
+          "kind": "select",
+          "section": "license",
+          "required": true,
+          "options": [
+            {
+              "value": "signals",
+              "label": "Signals"
+            },
+            {
+              "value": "other",
+              "label": "Other"
+            }
+          ]
+        },
+        {
+          "name": "dates",
+          "label": "Dates",
+          "kind": "section"
+        },
+        {
+          "name": "start_date",
+          "label": "Start Date",
+          "kind": "date",
+          "section": "dates",
+          "required": true
+        },
+        {
+          "name": "renewal_date",
+          "label": "Renewal Date",
+          "kind": "date",
+          "section": "dates",
+          "required": true
+        },
+        {
+          "name": "value",
+          "label": "Value",
+          "kind": "section"
+        },
+        {
+          "name": "amount_eur",
+          "label": "ARR (EUR)",
+          "kind": "number",
+          "section": "value",
+          "required": true
+        },
+        {
+          "name": "plan_type",
+          "label": "Plan",
+          "kind": "select",
+          "section": "value",
+          "options": [
+            {
+              "value": "starter",
+              "label": "Starter"
+            },
+            {
+              "value": "pro",
+              "label": "Pro"
+            },
+            {
+              "value": "partner",
+              "label": "Partner"
+            }
+          ]
+        },
+        {
+          "name": "seats",
+          "label": "Seats",
+          "kind": "number",
+          "section": "value"
+        },
+        {
+          "name": "payment_type",
+          "label": "Payment Type",
+          "kind": "select",
+          "section": "value",
+          "options": [
+            {
+              "value": "invoice",
+              "label": "Invoiced"
+            },
+            {
+              "value": "stripe",
+              "label": "Stripe"
+            }
+          ]
+        },
+        {
+          "name": "billing_interval",
+          "label": "Billing Cadence",
+          "kind": "select",
+          "section": "value",
+          "options": [
+            {
+              "value": "month",
+              "label": "Monthly"
+            },
+            {
+              "value": "year",
+              "label": "Yearly"
+            },
+            {
+              "value": "one_time",
+              "label": "One-time"
+            }
+          ]
+        },
+        {
+          "name": "is_active",
+          "label": "Active",
+          "kind": "toggle",
+          "section": "value"
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "kind": "markdown",
+          "section": "value",
+          "maxLength": 10000
+        }
+      ],
+      "related": [
+        {
+          "id": "offers",
+          "label": "Related offers",
+          "entity": "offers",
+          "icon": "doc.text",
+          "emptyMessage": "No linked offers",
+          "presentation": "list",
+          "create": {
+            "label": "Create Offer",
+            "webPath": "/dashboard/offers/new"
+          }
+        }
+      ]
+    },
+    {
+      "id": "policies",
+      "singularLabel": "Policy",
+      "pluralLabel": "Policies",
+      "icon": "shield",
+      "primaryField": "title",
+      "secondaryFields": [
+        "effective_date"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": false
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "policy",
+          "label": "Policy",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "policy",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "kind": "markdown",
+          "section": "policy",
+          "maxLength": 50000
+        },
+        {
+          "name": "effective_date",
+          "label": "Effective Date",
+          "kind": "date",
+          "section": "policy"
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "policy",
+          "relationEntity": "organizations"
+        },
+        {
+          "name": "url",
+          "label": "Policy URL",
+          "kind": "url",
+          "section": "policy"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "support_cases",
+      "singularLabel": "Support Case",
+      "pluralLabel": "Support Cases",
+      "icon": "lifepreserver",
+      "primaryField": "subject",
+      "secondaryFields": [
+        "status",
+        "priority",
+        "customer_name"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": false,
+        "update": true,
+        "delete": false,
+        "search": false
+      },
+      "access": null,
+      "board": {
+        "field": "status"
+      },
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "triage",
+          "label": "Triage",
+          "kind": "section"
+        },
+        {
+          "name": "short_id",
+          "label": "Case ID",
+          "kind": "text",
+          "section": "triage",
+          "readOnly": true
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "select",
+          "section": "triage",
+          "options": [
+            {
+              "value": "new",
+              "label": "New"
+            },
+            {
+              "value": "triaged",
+              "label": "Triaged"
+            },
+            {
+              "value": "waiting_on_customer",
+              "label": "Waiting on customer"
+            },
+            {
+              "value": "waiting_on_us",
+              "label": "Waiting on us"
+            },
+            {
+              "value": "resolved",
+              "label": "Resolved"
+            },
+            {
+              "value": "closed",
+              "label": "Closed"
+            }
+          ]
+        },
+        {
+          "name": "priority",
+          "label": "Priority",
+          "kind": "select",
+          "section": "triage",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "high",
+              "label": "High"
+            },
+            {
+              "value": "urgent",
+              "label": "Urgent"
+            }
+          ]
+        },
+        {
+          "name": "request",
+          "label": "Request",
+          "kind": "section"
+        },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "kind": "text",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "kind": "textarea",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "customer_name",
+          "label": "Customer",
+          "kind": "text",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "customer_email",
+          "label": "Email",
+          "kind": "email",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "organization_name",
+          "label": "Organization",
+          "kind": "text",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "topic",
+          "label": "Topic",
+          "kind": "text",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "source",
+          "label": "Source",
+          "kind": "text",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "kind": "text",
+          "section": "request",
+          "readOnly": true
+        },
+        {
+          "name": "source_page",
+          "label": "Source Page",
+          "kind": "url",
+          "section": "request",
+          "readOnly": true
+        }
+      ],
+      "related": [
+        {
+          "id": "interactions",
+          "label": "Replies",
+          "entity": "interactions",
+          "icon": "bubble.left.and.bubble.right",
+          "emptyMessage": "No replies yet",
+          "presentation": "timeline"
+        }
+      ]
+    },
+    {
+      "id": "readiness_assessments",
+      "singularLabel": "Readiness Assessment",
+      "pluralLabel": "Readiness",
+      "icon": "chart.line.uptrend.xyaxis",
+      "primaryField": "name",
+      "secondaryFields": [
+        "organization",
+        "overall_score",
+        "created_at"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "search": false
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "contact",
+          "label": "Contact",
+          "kind": "section"
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "kind": "text",
+          "section": "contact",
+          "readOnly": true
+        },
+        {
+          "name": "created_at",
+          "label": "Submitted",
+          "kind": "datetime",
+          "section": "contact",
+          "readOnly": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "kind": "email",
+          "section": "contact",
+          "readOnly": true
+        },
+        {
+          "name": "organization",
+          "label": "Organization",
+          "kind": "text",
+          "section": "contact",
+          "readOnly": true
+        },
+        {
+          "name": "role",
+          "label": "Role",
+          "kind": "text",
+          "section": "contact",
+          "readOnly": true
+        },
+        {
+          "name": "scores",
+          "label": "Scores",
+          "kind": "section"
+        },
+        {
+          "name": "overall_score",
+          "label": "Overall",
+          "kind": "number",
+          "section": "scores",
+          "readOnly": true
+        },
+        {
+          "name": "signal_awareness_score",
+          "label": "Signal Awareness",
+          "kind": "number",
+          "section": "scores",
+          "readOnly": true
+        },
+        {
+          "name": "strategic_integration_score",
+          "label": "Strategic Integration",
+          "kind": "number",
+          "section": "scores",
+          "readOnly": true
+        },
+        {
+          "name": "communication_clarity_score",
+          "label": "Communication Clarity",
+          "kind": "number",
+          "section": "scores",
+          "readOnly": true
+        },
+        {
+          "name": "context",
+          "label": "Context",
+          "kind": "section"
+        },
+        {
+          "name": "goal_90_days",
+          "label": "90-day Goal",
+          "kind": "textarea",
+          "section": "context",
+          "readOnly": true
+        },
+        {
+          "name": "biggest_obstacle",
+          "label": "Biggest Obstacle",
+          "kind": "textarea",
+          "section": "context",
+          "readOnly": true
+        },
+        {
+          "name": "preferred_support",
+          "label": "Preferred Support",
+          "kind": "textarea",
+          "section": "context",
+          "readOnly": true
+        },
+        {
+          "name": "additional_notes",
+          "label": "Additional Notes",
+          "kind": "textarea",
+          "section": "context",
+          "readOnly": true
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "signals_accounts",
+      "singularLabel": "Workspace",
+      "pluralLabel": "Workspaces",
+      "icon": "radar",
+      "primaryField": "organization_id",
+      "secondaryFields": [
+        "stage",
+        "account_type",
+        "seats"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": false,
+        "update": true,
+        "delete": false,
+        "search": false
+      },
+      "access": null,
+      "board": {
+        "field": "stage"
+      },
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "workspace",
+          "label": "Workspace",
+          "kind": "section"
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "workspace",
+          "relationEntity": "organizations",
+          "readOnly": true
+        },
+        {
+          "name": "primary_contact_id",
+          "label": "Primary Contact",
+          "kind": "relation",
+          "section": "workspace",
+          "relationEntity": "contacts",
+          "relationKey": "primary_contact",
+          "readOnly": true
+        },
+        {
+          "name": "signals_org_id",
+          "label": "Signals organization ID",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "owner_id",
+          "label": "Account owner ID",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "stage",
+          "label": "Stage",
+          "kind": "select",
+          "section": "workspace",
+          "options": [
+            {
+              "value": "target",
+              "label": "Target"
+            },
+            {
+              "value": "contacted",
+              "label": "Contacted"
+            },
+            {
+              "value": "demoed",
+              "label": "Demoed"
+            },
+            {
+              "value": "testing",
+              "label": "Testing"
+            },
+            {
+              "value": "active",
+              "label": "Active"
+            },
+            {
+              "value": "not_now",
+              "label": "Not now"
+            },
+            {
+              "value": "closed_lost",
+              "label": "Closed lost"
+            }
+          ]
+        },
+        {
+          "name": "motion",
+          "label": "motion",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "account_type",
+          "label": "account type",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "payment_type",
+          "label": "payment type",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "seats",
+          "label": "seats",
+          "kind": "number",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "started_on",
+          "label": "started on",
+          "kind": "date",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "source",
+          "label": "source",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "source_detail",
+          "label": "source detail",
+          "kind": "text",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "notes",
+          "label": "notes",
+          "kind": "textarea",
+          "section": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "product_activity",
+          "label": "Product activity",
+          "kind": "section"
+        },
+        {
+          "name": "usage_schema_version",
+          "label": "usage schema version",
+          "kind": "number",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_snapshot_at",
+          "label": "usage snapshot at",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_window_starts_at",
+          "label": "usage window starts at",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_window_ends_at",
+          "label": "usage window ends at",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_projects_count",
+          "label": "usage projects count",
+          "kind": "number",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_sessions_created_30d",
+          "label": "usage sessions created 30d",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_last_session_created_at",
+          "label": "usage last session created at",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_workflow_runs_succeeded_30d",
+          "label": "usage workflow runs succeeded 30d",
+          "kind": "number",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_last_successful_workflow_run_at",
+          "label": "usage last successful workflow run at",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_results_first_viewed_at",
+          "label": "usage results first viewed at",
+          "kind": "datetime",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "usage_credit_buckets",
+          "label": "usage credit buckets",
+          "kind": "readOnly",
+          "section": "product_activity",
+          "readOnly": true
+        },
+        {
+          "name": "issue_codes",
+          "label": "Issue Codes",
+          "kind": "stringList",
+          "section": "workspace",
+          "readOnly": true
+        }
+      ],
+      "related": [
+        {
+          "id": "organization",
+          "label": "Organization",
+          "entity": "organizations",
+          "icon": "building.2",
+          "emptyMessage": "No organization",
+          "presentation": "compact"
+        },
+        {
+          "id": "primary_contact",
+          "label": "Primary contact",
+          "entity": "contacts",
+          "icon": "person",
+          "emptyMessage": "No primary contact",
+          "presentation": "compact"
+        },
+        {
+          "id": "tasks",
+          "label": "Tasks",
+          "entity": "tasks",
+          "icon": "checkmark.square",
+          "emptyMessage": "No account tasks",
+          "presentation": "list",
+          "create": {
+            "label": "Add Task",
+            "webPath": "/dashboard/tasks/new",
+            "prefillField": "signals_account_id"
+          }
+        },
+        {
+          "id": "interactions",
+          "label": "Interactions",
+          "entity": "interactions",
+          "icon": "bubble.left.and.bubble.right",
+          "emptyMessage": "No interactions",
+          "presentation": "timeline",
+          "create": {
+            "label": "Add Interaction",
+            "webPath": "/dashboard/interactions/new"
+          }
+        },
+        {
+          "id": "support_cases",
+          "label": "Support cases",
+          "entity": "support_cases",
+          "icon": "lifepreserver",
+          "emptyMessage": "No support cases",
+          "presentation": "list",
+          "create": {
+            "label": "Add support case",
+            "webPath": "/dashboard/support-cases/new"
+          }
+        },
+        {
+          "id": "work_sessions",
+          "label": "Work sessions",
+          "entity": "signals_worksessions",
+          "icon": "rectangle.on.rectangle",
+          "emptyMessage": "No work sessions",
+          "presentation": "timeline",
+          "create": {
+            "label": "Add work session",
+            "webPath": "/dashboard/signals-worksessions/new"
+          }
+        }
+      ]
+    },
+    {
+      "id": "signals_worksessions",
+      "singularLabel": "Work Session",
+      "pluralLabel": "Work Sessions",
+      "icon": "rectangle.on.rectangle",
+      "primaryField": "title",
+      "secondaryFields": [
+        "session_date",
+        "status",
+        "delivery_mode"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "search": false
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "session",
+          "label": "Session",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "session",
+          "readOnly": true
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "session",
+          "relationEntity": "organizations",
+          "readOnly": true
+        },
+        {
+          "name": "signals_account_id",
+          "label": "Workspace",
+          "kind": "relation",
+          "section": "session",
+          "relationEntity": "signals_accounts",
+          "relationKey": "workspace",
+          "readOnly": true
+        },
+        {
+          "name": "primary_contact_id",
+          "label": "Primary Contact",
+          "kind": "relation",
+          "section": "session",
+          "relationEntity": "contacts",
+          "relationKey": "primary_contact",
+          "readOnly": true
+        },
+        {
+          "name": "session_date",
+          "label": "Date",
+          "kind": "date",
+          "section": "session",
+          "readOnly": true
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "text",
+          "section": "session",
+          "readOnly": true
+        },
+        {
+          "name": "delivery_mode",
+          "label": "Delivery Mode",
+          "kind": "text",
+          "section": "session",
+          "readOnly": true
+        },
+        {
+          "name": "facilitator",
+          "label": "Facilitator",
+          "kind": "text",
+          "section": "session",
+          "readOnly": true
+        },
+        {
+          "name": "included_starter_plan",
+          "label": "Included Starter Plan",
+          "kind": "toggle",
+          "section": "session",
+          "readOnly": true
+        },
+        {
+          "name": "offer_id",
+          "label": "Offer",
+          "kind": "relation",
+          "section": "session",
+          "relationEntity": "offers",
+          "readOnly": true
+        },
+        {
+          "name": "project_id",
+          "label": "Project",
+          "kind": "relation",
+          "section": "session",
+          "relationEntity": "projects",
+          "readOnly": true
+        },
+        {
+          "name": "content",
+          "label": "Content",
+          "kind": "section"
+        },
+        {
+          "name": "briefing",
+          "label": "Briefing",
+          "kind": "textarea",
+          "section": "content",
+          "readOnly": true
+        },
+        {
+          "name": "outcomes",
+          "label": "Outcomes",
+          "kind": "textarea",
+          "section": "content",
+          "readOnly": true
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "kind": "textarea",
+          "section": "content",
+          "readOnly": true
+        }
+      ],
+      "related": [
+        {
+          "id": "organization",
+          "label": "Organization",
+          "entity": "organizations",
+          "icon": "building.2",
+          "emptyMessage": "No organization",
+          "presentation": "compact"
+        },
+        {
+          "id": "workspace",
+          "label": "Workspace",
+          "entity": "signals_accounts",
+          "icon": "radar",
+          "emptyMessage": "No workspace",
+          "presentation": "compact"
+        },
+        {
+          "id": "primary_contact",
+          "label": "Primary contact",
+          "entity": "contacts",
+          "icon": "person",
+          "emptyMessage": "No primary contact",
+          "presentation": "compact"
+        },
+        {
+          "id": "offer",
+          "label": "Offer",
+          "entity": "offers",
+          "icon": "doc.text",
+          "emptyMessage": "No linked offer",
+          "presentation": "compact"
+        },
+        {
+          "id": "project",
+          "label": "Project",
+          "entity": "projects",
+          "icon": "folder",
+          "emptyMessage": "No linked project",
+          "presentation": "compact"
+        }
+      ]
+    },
+    {
+      "id": "offers",
+      "singularLabel": "Offer",
+      "pluralLabel": "Offers",
+      "icon": "doc.text",
+      "primaryField": "title",
+      "secondaryFields": [
+        "status",
+        "currency",
+        "total_amount"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": false,
+        "update": false,
+        "delete": false,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "offer",
+          "label": "Offer",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "offer",
+          "maxLength": 200
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "select",
+          "section": "offer",
+          "options": [
+            {
+              "value": "draft",
+              "label": "Draft"
+            },
+            {
+              "value": "sent",
+              "label": "Sent"
+            }
+          ]
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "offer",
+          "relationEntity": "organizations"
+        },
+        {
+          "name": "lead_id",
+          "label": "Lead",
+          "kind": "relation",
+          "section": "offer",
+          "relationEntity": "leads"
+        },
+        {
+          "name": "total_amount",
+          "label": "Total Amount",
+          "kind": "number",
+          "section": "offer"
+        },
+        {
+          "name": "currency",
+          "label": "Currency",
+          "kind": "text",
+          "section": "offer"
+        },
+        {
+          "name": "valid_until",
+          "label": "Valid Until",
+          "kind": "date",
+          "section": "offer",
+          "required": true
+        },
+        {
+          "name": "is_accepted",
+          "label": "Accepted",
+          "kind": "toggle",
+          "section": "offer"
+        },
+        {
+          "name": "discount_reason",
+          "label": "Discount Reason",
+          "kind": "text",
+          "section": "offer"
+        },
+        {
+          "name": "last_viewed_at",
+          "label": "Last Viewed",
+          "kind": "datetime",
+          "section": "offer",
+          "readOnly": true
+        },
+        {
+          "name": "view_count",
+          "label": "Views",
+          "kind": "number",
+          "section": "offer",
+          "readOnly": true
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "interactions",
+      "singularLabel": "Interaction",
+      "pluralLabel": "Interactions",
+      "icon": "bubble.left.and.bubble.right",
+      "primaryField": "title",
+      "secondaryFields": [
+        "type",
+        "occurred_at"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": true,
+        "search": true
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "interaction",
+          "label": "Interaction",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "interaction",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "type",
+          "label": "Type",
+          "kind": "select",
+          "section": "interaction",
+          "options": [
+            {
+              "value": "note",
+              "label": "Note"
+            },
+            {
+              "value": "email",
+              "label": "Email"
+            },
+            {
+              "value": "call",
+              "label": "Call"
+            },
+            {
+              "value": "meeting",
+              "label": "Meeting"
+            },
+            {
+              "value": "web",
+              "label": "Web"
+            }
+          ]
+        },
+        {
+          "name": "occurred_at",
+          "label": "Date",
+          "kind": "datetime",
+          "section": "interaction",
+          "required": true
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "kind": "textarea",
+          "section": "interaction",
+          "maxLength": 10000
+        },
+        {
+          "name": "url",
+          "label": "URL",
+          "kind": "url",
+          "section": "interaction"
+        },
+        {
+          "name": "relationships",
+          "label": "Relationships",
+          "kind": "section"
+        },
+        {
+          "name": "organization_id",
+          "label": "Organization",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "organizations"
+        },
+        {
+          "name": "lead_id",
+          "label": "Lead",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "leads"
+        },
+        {
+          "name": "project_id",
+          "label": "Project",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "projects"
+        },
+        {
+          "name": "contact_ids",
+          "label": "Contacts",
+          "kind": "multiRelation",
+          "section": "relationships",
+          "relationEntity": "contacts",
+          "relationKey": "contacts",
+          "storage": "junction"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "tasks",
+      "singularLabel": "Task",
+      "pluralLabel": "Tasks",
+      "icon": "checkmark.square",
+      "primaryField": "title",
+      "secondaryFields": [
+        "status",
+        "due_date"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": true,
+        "update": true,
+        "delete": false,
+        "search": false
+      },
+      "access": null,
+      "board": {
+        "field": "status"
+      },
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "task",
+          "label": "Task",
+          "kind": "section"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "task",
+          "required": true,
+          "maxLength": 200
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "select",
+          "section": "task",
+          "options": [
+            {
+              "value": "pending",
+              "label": "Pending"
+            },
+            {
+              "value": "in_progress",
+              "label": "In Progress"
+            },
+            {
+              "value": "review",
+              "label": "Review"
+            },
+            {
+              "value": "blocked",
+              "label": "Blocked"
+            },
+            {
+              "value": "completed",
+              "label": "Completed"
+            },
+            {
+              "value": "cancelled",
+              "label": "Cancelled"
+            }
+          ]
+        },
+        {
+          "name": "due_date",
+          "label": "Due Date",
+          "kind": "date",
+          "section": "task"
+        },
+        {
+          "name": "notes",
+          "label": "Notes",
+          "kind": "textarea",
+          "section": "task",
+          "maxLength": 10000
+        },
+        {
+          "name": "relationships",
+          "label": "Relationships",
+          "kind": "section"
+        },
+        {
+          "name": "project_id",
+          "label": "Project",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "projects"
+        },
+        {
+          "name": "milestone_id",
+          "label": "Milestone",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "milestones"
+        },
+        {
+          "name": "goal_id",
+          "label": "Goal",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "goals",
+          "optionsPath": "/api/agent/goals"
+        },
+        {
+          "name": "signals_account_id",
+          "label": "Signals account",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "signals_accounts",
+          "optionsPath": "/api/agent/signals_accounts"
+        },
+        {
+          "name": "contact_id",
+          "label": "Contact",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "contacts"
+        },
+        {
+          "name": "lead_id",
+          "label": "Lead",
+          "kind": "relation",
+          "section": "relationships",
+          "relationEntity": "leads"
+        },
+        {
+          "name": "responsible_party",
+          "label": "Responsible Party",
+          "kind": "select",
+          "section": "relationships",
+          "options": [
+            {
+              "value": "unassigned",
+              "label": "Unassigned"
+            },
+            {
+              "value": "team",
+              "label": "Envisioning"
+            },
+            {
+              "value": "client",
+              "label": "Client"
+            }
+          ]
+        },
+        {
+          "name": "assigned_to",
+          "label": "Assigned To",
+          "kind": "select",
+          "section": "relationships",
+          "optionsSource": "members"
+        }
+      ],
+      "related": []
+    },
+    {
+      "id": "newsletter_subscribers",
+      "singularLabel": "Subscriber",
+      "pluralLabel": "Subscribers",
+      "icon": "envelope",
+      "primaryField": "email",
+      "secondaryFields": [
+        "status",
+        "organization",
+        "subscribed_at"
+      ],
+      "capabilities": {
+        "list": true,
+        "read": true,
+        "create": false,
+        "update": true,
+        "delete": false,
+        "search": false
+      },
+      "access": null,
+      "listFilters": [],
+      "fields": [
+        {
+          "name": "subscriber",
+          "label": "Subscriber",
+          "kind": "section"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "kind": "email",
+          "section": "subscriber",
+          "readOnly": true
+        },
+        {
+          "name": "status",
+          "label": "Status",
+          "kind": "select",
+          "section": "subscriber",
+          "options": [
+            {
+              "value": "active",
+              "label": "Active"
+            },
+            {
+              "value": "unsubscribed",
+              "label": "Unsubscribed"
+            },
+            {
+              "value": "bounced",
+              "label": "Bounced"
+            },
+            {
+              "value": "complained",
+              "label": "Complained"
+            },
+            {
+              "value": "suppressed",
+              "label": "Suppressed"
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "label": "Name",
+          "kind": "text",
+          "section": "subscriber"
+        },
+        {
+          "name": "organization",
+          "label": "Organization",
+          "kind": "text",
+          "section": "subscriber"
+        },
+        {
+          "name": "title",
+          "label": "Title",
+          "kind": "text",
+          "section": "subscriber"
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "kind": "country",
+          "section": "subscriber"
+        },
+        {
+          "name": "contact_id",
+          "label": "Contact",
+          "kind": "relation",
+          "section": "subscriber",
+          "relationEntity": "contacts",
+          "relationKey": "contact",
+          "readOnly": true
+        },
+        {
+          "name": "history",
+          "label": "History",
+          "kind": "section"
+        },
+        {
+          "name": "source",
+          "label": "Source",
+          "kind": "text",
+          "section": "history",
+          "readOnly": true
+        },
+        {
+          "name": "subscribed_at",
+          "label": "Subscribed",
+          "kind": "datetime",
+          "section": "history",
+          "readOnly": true
+        },
+        {
+          "name": "unsubscribed_at",
+          "label": "Unsubscribed",
+          "kind": "datetime",
+          "section": "history",
+          "readOnly": true
+        },
+        {
+          "name": "welcome_sent_at",
+          "label": "Welcome Sent",
+          "kind": "datetime",
+          "section": "history",
+          "readOnly": true
+        },
+        {
+          "name": "created_at",
+          "label": "Created",
+          "kind": "datetime",
+          "section": "history",
+          "readOnly": true
+        }
+      ],
+      "related": []
+    }
+  ],
+  "relations": [
+    {
+      "key": "contacts.organization",
+      "source": "contacts",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "contacts.interactions",
+      "source": "contacts",
+      "target": "interactions",
+      "cardinality": "manyToMany",
+      "presentation": {
+        "id": "interactions",
+        "label": "Interactions",
+        "entity": "interactions",
+        "icon": "bubble.left.and.bubble.right",
+        "emptyMessage": "No interactions",
+        "presentation": "timeline",
+        "create": {
+          "label": "Add Interaction",
+          "webPath": "/dashboard/interactions/new",
+          "prefillField": "contact_id"
+        }
+      }
+    },
+    {
+      "key": "leads.organization",
+      "source": "leads",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "leads.contact",
+      "source": "leads",
+      "target": "contacts",
+      "cardinality": "one",
+      "presentation": {
+        "id": "contact",
+        "label": "Contact",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "No contact",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "leads.offers",
+      "source": "leads",
+      "target": "offers",
+      "cardinality": "many",
+      "presentation": {
+        "id": "offers",
+        "label": "Offers",
+        "entity": "offers",
+        "icon": "doc.text",
+        "emptyMessage": "No offers",
+        "presentation": "list",
+        "create": {
+          "label": "Create Offer",
+          "webPath": "/dashboard/offers/new",
+          "prefillField": "lead_id"
+        }
+      }
+    },
+    {
+      "key": "projects.organization",
+      "source": "projects",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "projects.lead",
+      "source": "projects",
+      "target": "leads",
+      "cardinality": "one",
+      "presentation": {
+        "id": "lead",
+        "label": "Related Lead",
+        "entity": "leads",
+        "icon": "target",
+        "emptyMessage": "No lead",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "projects.license",
+      "source": "projects",
+      "target": "licenses",
+      "cardinality": "one",
+      "presentation": {
+        "id": "license",
+        "label": "Related License",
+        "entity": "licenses",
+        "icon": "receipt",
+        "emptyMessage": "No license",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "projects.contacts",
+      "source": "projects",
+      "target": "contacts",
+      "cardinality": "manyToMany",
+      "presentation": {
+        "id": "contacts",
+        "label": "Contacts",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "No contact",
+        "presentation": "list"
+      }
+    },
+    {
+      "key": "milestones.project",
+      "source": "milestones",
+      "target": "projects",
+      "cardinality": "one",
+      "presentation": {
+        "id": "project",
+        "label": "Project",
+        "entity": "projects",
+        "icon": "folder",
+        "emptyMessage": "No project",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "licenses.organization",
+      "source": "licenses",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "licenses.lead",
+      "source": "licenses",
+      "target": "leads",
+      "cardinality": "one",
+      "presentation": {
+        "id": "lead",
+        "label": "Lead",
+        "entity": "leads",
+        "icon": "target",
+        "emptyMessage": "No lead",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "licenses.offer",
+      "source": "licenses",
+      "target": "offers",
+      "cardinality": "one",
+      "presentation": {
+        "id": "offer",
+        "label": "Offer",
+        "entity": "offers",
+        "icon": "doc.text",
+        "emptyMessage": "No offer",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "licenses.offers",
+      "source": "licenses",
+      "target": "offers",
+      "cardinality": "manyToMany",
+      "presentation": {
+        "id": "offers",
+        "label": "Related offers",
+        "entity": "offers",
+        "icon": "doc.text",
+        "emptyMessage": "No linked offers",
+        "presentation": "list",
+        "create": {
+          "label": "Create Offer",
+          "webPath": "/dashboard/offers/new"
+        }
+      }
+    },
+    {
+      "key": "offers.organization",
+      "source": "offers",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "offers.lead",
+      "source": "offers",
+      "target": "leads",
+      "cardinality": "one",
+      "presentation": {
+        "id": "lead",
+        "label": "Lead",
+        "entity": "leads",
+        "icon": "target",
+        "emptyMessage": "No lead",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "services.offers",
+      "source": "services",
+      "target": "offers",
+      "cardinality": "manyToMany",
+      "presentation": {
+        "id": "offers",
+        "label": "Offers using this service",
+        "entity": "offers",
+        "icon": "doc.text",
+        "emptyMessage": "No offers are currently using this service",
+        "presentation": "list",
+        "create": {
+          "label": "Create Offer",
+          "webPath": "/dashboard/offers/new"
+        }
+      }
+    },
+    {
+      "key": "offers.services",
+      "source": "offers",
+      "target": "services",
+      "cardinality": "manyToMany",
+      "presentation": {
+        "id": "services",
+        "label": "Services",
+        "entity": "services",
+        "icon": "square.stack.3d.up",
+        "emptyMessage": "No services",
+        "presentation": "list"
+      }
+    },
+    {
+      "key": "interactions.organization",
+      "source": "interactions",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "interactions.lead",
+      "source": "interactions",
+      "target": "leads",
+      "cardinality": "one",
+      "presentation": {
+        "id": "lead",
+        "label": "Lead",
+        "entity": "leads",
+        "icon": "target",
+        "emptyMessage": "No lead",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "interactions.project",
+      "source": "interactions",
+      "target": "projects",
+      "cardinality": "one",
+      "presentation": {
+        "id": "project",
+        "label": "Project",
+        "entity": "projects",
+        "icon": "folder",
+        "emptyMessage": "No project",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "interactions.contacts",
+      "source": "interactions",
+      "target": "contacts",
+      "cardinality": "manyToMany",
+      "presentation": {
+        "id": "contacts",
+        "label": "Contacts",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "No contact",
+        "presentation": "list"
+      }
+    },
+    {
+      "key": "policies.organization",
+      "source": "policies",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "newsletter_subscribers.contact",
+      "source": "newsletter_subscribers",
+      "target": "contacts",
+      "cardinality": "one",
+      "presentation": {
+        "id": "contact",
+        "label": "Contact",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "Not linked to a contact",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "support_cases.contact",
+      "source": "support_cases",
+      "target": "contacts",
+      "cardinality": "one",
+      "presentation": {
+        "id": "contact",
+        "label": "Contact",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "No contact",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "support_cases.interactions",
+      "source": "support_cases",
+      "target": "interactions",
+      "cardinality": "many",
+      "presentation": {
+        "id": "interactions",
+        "label": "Replies",
+        "entity": "interactions",
+        "icon": "bubble.left.and.bubble.right",
+        "emptyMessage": "No replies yet",
+        "presentation": "timeline"
+      }
+    },
+    {
+      "key": "signals_accounts.organization",
+      "source": "signals_accounts",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "signals_accounts.primary_contact",
+      "source": "signals_accounts",
+      "target": "contacts",
+      "cardinality": "one",
+      "presentation": {
+        "id": "primary_contact",
+        "label": "Primary Contact",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "No contact",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "signals_accounts.tasks",
+      "source": "signals_accounts",
+      "target": "tasks",
+      "cardinality": "many",
+      "presentation": {
+        "id": "tasks",
+        "label": "Tasks",
+        "entity": "tasks",
+        "icon": "checkmark.square",
+        "emptyMessage": "No account tasks",
+        "presentation": "list",
+        "create": {
+          "label": "Add Task",
+          "webPath": "/dashboard/tasks/new",
+          "prefillField": "signals_account_id"
+        }
+      }
+    },
+    {
+      "key": "signals_worksessions.organization",
+      "source": "signals_worksessions",
+      "target": "organizations",
+      "cardinality": "one",
+      "presentation": {
+        "id": "organization",
+        "label": "Organization",
+        "entity": "organizations",
+        "icon": "building.2",
+        "emptyMessage": "No organization",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "signals_worksessions.workspace",
+      "source": "signals_worksessions",
+      "target": "signals_accounts",
+      "cardinality": "one",
+      "presentation": {
+        "id": "workspace",
+        "label": "Workspace",
+        "entity": "signals_accounts",
+        "icon": "radar",
+        "emptyMessage": "No workspace",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "signals_worksessions.primary_contact",
+      "source": "signals_worksessions",
+      "target": "contacts",
+      "cardinality": "one",
+      "presentation": {
+        "id": "primary_contact",
+        "label": "Primary Contact",
+        "entity": "contacts",
+        "icon": "person.2",
+        "emptyMessage": "No contact",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "signals_worksessions.offer",
+      "source": "signals_worksessions",
+      "target": "offers",
+      "cardinality": "one",
+      "presentation": {
+        "id": "offer",
+        "label": "Offer",
+        "entity": "offers",
+        "icon": "doc.text",
+        "emptyMessage": "No offer",
+        "presentation": "compact"
+      }
+    },
+    {
+      "key": "signals_worksessions.project",
+      "source": "signals_worksessions",
+      "target": "projects",
+      "cardinality": "one",
+      "presentation": {
+        "id": "project",
+        "label": "Project",
+        "entity": "projects",
+        "icon": "folder",
+        "emptyMessage": "No project",
+        "presentation": "compact"
+      }
+    }
+  ],
+  "operations": [
+    {
+      "id": "organizations.list",
+      "entity": "organizations",
+      "kind": "list",
+      "scopes": [
+        "organizations:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/organizations"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": {
+        "tool": "crm_list_organizations",
+        "description": "Organization: list CRM operation."
+      },
+      "cli": {
+        "command": "crm list organizations",
+        "aliases": [
+          "organizations list"
+        ]
+      }
+    },
+    {
+      "id": "organizations.get",
+      "entity": "organizations",
+      "kind": "get",
+      "scopes": [
+        "organizations:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/organizations/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": {
+        "tool": "crm_get_organization",
+        "description": "Organization: get CRM operation."
+      },
+      "cli": {
+        "command": "crm get organizations"
+      }
+    },
+    {
+      "id": "organizations.create",
+      "entity": "organizations",
+      "kind": "create",
+      "scopes": [
+        "organizations:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/organizations"
+      },
+      "inputSchemaId": "organizations.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": {
+        "tool": "crm_create_organization",
+        "description": "Organization: create CRM operation."
+      },
+      "cli": {
+        "command": "crm create organizations",
+        "aliases": [
+          "organizations create"
+        ]
+      }
+    },
+    {
+      "id": "organizations.update",
+      "entity": "organizations",
+      "kind": "update",
+      "scopes": [
+        "organizations:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/organizations/:id"
+      },
+      "inputSchemaId": "organizations.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": {
+        "tool": "crm_update_organization",
+        "description": "Organization: update CRM operation."
+      },
+      "cli": {
+        "command": "crm update organizations",
+        "aliases": [
+          "organizations update"
+        ]
+      }
+    },
+    {
+      "id": "organizations.delete",
+      "entity": "organizations",
+      "kind": "delete",
+      "scopes": [
+        "organizations:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/organizations/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": {
+        "tool": "crm_delete_organization",
+        "description": "Organization: delete CRM operation."
+      },
+      "cli": {
+        "command": "crm delete organizations",
+        "aliases": [
+          "organizations delete"
+        ]
+      }
+    },
+    {
+      "id": "contacts.list",
+      "entity": "contacts",
+      "kind": "list",
+      "scopes": [
+        "contacts:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/contacts"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": {
+        "tool": "crm_list_contacts",
+        "description": "Contact: list CRM operation."
+      },
+      "cli": {
+        "command": "crm list contacts",
+        "aliases": [
+          "contacts list"
+        ]
+      }
+    },
+    {
+      "id": "contacts.get",
+      "entity": "contacts",
+      "kind": "get",
+      "scopes": [
+        "contacts:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/contacts/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": {
+        "tool": "crm_get_contact",
+        "description": "Contact: get CRM operation."
+      },
+      "cli": {
+        "command": "crm get contacts"
+      }
+    },
+    {
+      "id": "contacts.create",
+      "entity": "contacts",
+      "kind": "create",
+      "scopes": [
+        "contacts:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/contacts"
+      },
+      "inputSchemaId": "contacts.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": {
+        "tool": "crm_create_contact",
+        "description": "Contact: create CRM operation."
+      },
+      "cli": {
+        "command": "crm create contacts",
+        "aliases": [
+          "contacts create"
+        ]
+      }
+    },
+    {
+      "id": "contacts.update",
+      "entity": "contacts",
+      "kind": "update",
+      "scopes": [
+        "contacts:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/contacts/:id"
+      },
+      "inputSchemaId": "contacts.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": {
+        "tool": "crm_update_contact",
+        "description": "Contact: update CRM operation."
+      },
+      "cli": {
+        "command": "crm update contacts",
+        "aliases": [
+          "contacts update"
+        ]
+      }
+    },
+    {
+      "id": "contacts.delete",
+      "entity": "contacts",
+      "kind": "delete",
+      "scopes": [
+        "contacts:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/contacts/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": {
+        "tool": "crm_delete_contact",
+        "description": "Contact: delete CRM operation."
+      },
+      "cli": {
+        "command": "crm delete contacts",
+        "aliases": [
+          "contacts delete"
+        ]
+      }
+    },
+    {
+      "id": "leads.list",
+      "entity": "leads",
+      "kind": "list",
+      "scopes": [
+        "leads:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/leads"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list leads"
+      }
+    },
+    {
+      "id": "leads.get",
+      "entity": "leads",
+      "kind": "get",
+      "scopes": [
+        "leads:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/leads/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": {
+        "tool": "crm_get_lead",
+        "description": "Lead: get CRM operation."
+      },
+      "cli": {
+        "command": "crm get leads"
+      }
+    },
+    {
+      "id": "leads.create",
+      "entity": "leads",
+      "kind": "create",
+      "scopes": [
+        "leads:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/leads"
+      },
+      "inputSchemaId": "leads.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create leads"
+      }
+    },
+    {
+      "id": "leads.update",
+      "entity": "leads",
+      "kind": "update",
+      "scopes": [
+        "leads:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/leads/:id"
+      },
+      "inputSchemaId": "leads.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update leads"
+      }
+    },
+    {
+      "id": "leads.delete",
+      "entity": "leads",
+      "kind": "delete",
+      "scopes": [
+        "leads:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/leads/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete leads"
+      }
+    },
+    {
+      "id": "projects.list",
+      "entity": "projects",
+      "kind": "list",
+      "scopes": [
+        "projects:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/projects"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list projects"
+      }
+    },
+    {
+      "id": "projects.get",
+      "entity": "projects",
+      "kind": "get",
+      "scopes": [
+        "projects:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/projects/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": {
+        "tool": "crm_get_project",
+        "description": "Project: get CRM operation."
+      },
+      "cli": {
+        "command": "crm get projects"
+      }
+    },
+    {
+      "id": "projects.create",
+      "entity": "projects",
+      "kind": "create",
+      "scopes": [
+        "projects:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/projects"
+      },
+      "inputSchemaId": "projects.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create projects"
+      }
+    },
+    {
+      "id": "projects.update",
+      "entity": "projects",
+      "kind": "update",
+      "scopes": [
+        "projects:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/projects/:id"
+      },
+      "inputSchemaId": "projects.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update projects"
+      }
+    },
+    {
+      "id": "projects.delete",
+      "entity": "projects",
+      "kind": "delete",
+      "scopes": [
+        "projects:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/projects/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete projects"
+      }
+    },
+    {
+      "id": "services.list",
+      "entity": "services",
+      "kind": "list",
+      "scopes": [
+        "services:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/services"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list services"
+      }
+    },
+    {
+      "id": "services.get",
+      "entity": "services",
+      "kind": "get",
+      "scopes": [
+        "services:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/services/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": null,
+      "cli": {
+        "command": "crm get services"
+      }
+    },
+    {
+      "id": "services.create",
+      "entity": "services",
+      "kind": "create",
+      "scopes": [
+        "services:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/services"
+      },
+      "inputSchemaId": "services.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create services"
+      }
+    },
+    {
+      "id": "services.update",
+      "entity": "services",
+      "kind": "update",
+      "scopes": [
+        "services:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/services/:id"
+      },
+      "inputSchemaId": "services.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update services"
+      }
+    },
+    {
+      "id": "services.delete",
+      "entity": "services",
+      "kind": "delete",
+      "scopes": [
+        "services:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/services/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete services"
+      }
+    },
+    {
+      "id": "milestones.list",
+      "entity": "milestones",
+      "kind": "list",
+      "scopes": [
+        "milestones:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/milestones"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list milestones"
+      }
+    },
+    {
+      "id": "milestones.get",
+      "entity": "milestones",
+      "kind": "get",
+      "scopes": [
+        "milestones:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/milestones/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": null,
+      "cli": {
+        "command": "crm get milestones"
+      }
+    },
+    {
+      "id": "milestones.create",
+      "entity": "milestones",
+      "kind": "create",
+      "scopes": [
+        "milestones:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/milestones"
+      },
+      "inputSchemaId": "milestones.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create milestones"
+      }
+    },
+    {
+      "id": "milestones.update",
+      "entity": "milestones",
+      "kind": "update",
+      "scopes": [
+        "milestones:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/milestones/:id"
+      },
+      "inputSchemaId": "milestones.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update milestones"
+      }
+    },
+    {
+      "id": "milestones.delete",
+      "entity": "milestones",
+      "kind": "delete",
+      "scopes": [
+        "milestones:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/milestones/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete milestones"
+      }
+    },
+    {
+      "id": "licenses.list",
+      "entity": "licenses",
+      "kind": "list",
+      "scopes": [
+        "licenses:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/licenses"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list licenses"
+      }
+    },
+    {
+      "id": "licenses.get",
+      "entity": "licenses",
+      "kind": "get",
+      "scopes": [
+        "licenses:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/licenses/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": null,
+      "cli": {
+        "command": "crm get licenses"
+      }
+    },
+    {
+      "id": "licenses.create",
+      "entity": "licenses",
+      "kind": "create",
+      "scopes": [
+        "licenses:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/licenses"
+      },
+      "inputSchemaId": "licenses.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create licenses"
+      }
+    },
+    {
+      "id": "licenses.update",
+      "entity": "licenses",
+      "kind": "update",
+      "scopes": [
+        "licenses:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/licenses/:id"
+      },
+      "inputSchemaId": "licenses.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update licenses"
+      }
+    },
+    {
+      "id": "licenses.delete",
+      "entity": "licenses",
+      "kind": "delete",
+      "scopes": [
+        "licenses:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/licenses/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete licenses"
+      }
+    },
+    {
+      "id": "policies.list",
+      "entity": "policies",
+      "kind": "list",
+      "scopes": [
+        "policies:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/policies"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list policies"
+      }
+    },
+    {
+      "id": "policies.create",
+      "entity": "policies",
+      "kind": "create",
+      "scopes": [
+        "policies:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/policies"
+      },
+      "inputSchemaId": "policies.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create policies"
+      }
+    },
+    {
+      "id": "policies.update",
+      "entity": "policies",
+      "kind": "update",
+      "scopes": [
+        "policies:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/policies/:id"
+      },
+      "inputSchemaId": "policies.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update policies"
+      }
+    },
+    {
+      "id": "policies.delete",
+      "entity": "policies",
+      "kind": "delete",
+      "scopes": [
+        "policies:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/policies/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete policies"
+      }
+    },
+    {
+      "id": "support_cases.list",
+      "entity": "support_cases",
+      "kind": "list",
+      "scopes": [
+        "support_cases:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/support_cases"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list support_cases"
+      }
+    },
+    {
+      "id": "support_cases.update",
+      "entity": "support_cases",
+      "kind": "update",
+      "scopes": [
+        "support_cases:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/support_cases/:id"
+      },
+      "inputSchemaId": "support_cases.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update support_cases"
+      }
+    },
+    {
+      "id": "readiness_assessments.list",
+      "entity": "readiness_assessments",
+      "kind": "list",
+      "scopes": [
+        "readiness:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/readiness_assessments"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list readiness_assessments"
+      }
+    },
+    {
+      "id": "signals_accounts.list",
+      "entity": "signals_accounts",
+      "kind": "list",
+      "scopes": [
+        "signals:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/signals_accounts"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list signals_accounts"
+      }
+    },
+    {
+      "id": "signals_accounts.update",
+      "entity": "signals_accounts",
+      "kind": "update",
+      "scopes": [
+        "signals:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/signals_accounts/:id"
+      },
+      "inputSchemaId": "signals_accounts.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update signals_accounts"
+      }
+    },
+    {
+      "id": "signals_worksessions.list",
+      "entity": "signals_worksessions",
+      "kind": "list",
+      "scopes": [
+        "signals:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/signals_worksessions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list signals_worksessions"
+      }
+    },
+    {
+      "id": "offers.list",
+      "entity": "offers",
+      "kind": "list",
+      "scopes": [
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/offers"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list offers"
+      }
+    },
+    {
+      "id": "offers.get",
+      "entity": "offers",
+      "kind": "get",
+      "scopes": [
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/offers/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": {
+        "tool": "crm_get_offer",
+        "description": "Offer: get CRM operation."
+      },
+      "cli": {
+        "command": "crm get offers"
+      }
+    },
+    {
+      "id": "interactions.list",
+      "entity": "interactions",
+      "kind": "list",
+      "scopes": [
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/interactions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": {
+        "tool": "crm_list_interactions",
+        "description": "Interaction: list CRM operation."
+      },
+      "cli": {
+        "command": "crm list interactions"
+      }
+    },
+    {
+      "id": "interactions.get",
+      "entity": "interactions",
+      "kind": "get",
+      "scopes": [
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/interactions/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": {
+        "tool": "crm_get_interaction",
+        "description": "Interaction: get CRM operation."
+      },
+      "cli": {
+        "command": "crm get interactions"
+      }
+    },
+    {
+      "id": "interactions.create",
+      "entity": "interactions",
+      "kind": "create",
+      "scopes": [
+        "interactions:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/interactions"
+      },
+      "inputSchemaId": "interactions.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": {
+        "tool": "crm_create_interaction",
+        "description": "Interaction: create CRM operation."
+      },
+      "cli": {
+        "command": "crm create interactions"
+      }
+    },
+    {
+      "id": "interactions.update",
+      "entity": "interactions",
+      "kind": "update",
+      "scopes": [
+        "interactions:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/interactions/:id"
+      },
+      "inputSchemaId": "interactions.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update interactions"
+      }
+    },
+    {
+      "id": "interactions.delete",
+      "entity": "interactions",
+      "kind": "delete",
+      "scopes": [
+        "interactions:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/interactions/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.delete",
+      "mcp": null,
+      "cli": {
+        "command": "crm delete interactions"
+      }
+    },
+    {
+      "id": "tasks.list",
+      "entity": "tasks",
+      "kind": "list",
+      "scopes": [
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/tasks"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list tasks"
+      }
+    },
+    {
+      "id": "tasks.get",
+      "entity": "tasks",
+      "kind": "get",
+      "scopes": [
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/tasks/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": null,
+      "cli": {
+        "command": "crm get tasks"
+      }
+    },
+    {
+      "id": "tasks.create",
+      "entity": "tasks",
+      "kind": "create",
+      "scopes": [
+        "tasks:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/tasks"
+      },
+      "inputSchemaId": "tasks.create.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.create",
+      "mcp": null,
+      "cli": {
+        "command": "crm create tasks"
+      }
+    },
+    {
+      "id": "tasks.update",
+      "entity": "tasks",
+      "kind": "update",
+      "scopes": [
+        "tasks:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/tasks/:id"
+      },
+      "inputSchemaId": "tasks.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update tasks"
+      }
+    },
+    {
+      "id": "newsletter_subscribers.list",
+      "entity": "newsletter_subscribers",
+      "kind": "list",
+      "scopes": [
+        "newsletter_subscribers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/newsletter_subscribers"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ListEnvelope",
+      "sdkMethod": "crm.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm list newsletter_subscribers"
+      }
+    },
+    {
+      "id": "newsletter_subscribers.get",
+      "entity": "newsletter_subscribers",
+      "kind": "get",
+      "scopes": [
+        "newsletter_subscribers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/newsletter_subscribers/:id"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.get",
+      "mcp": null,
+      "cli": {
+        "command": "crm get newsletter_subscribers"
+      }
+    },
+    {
+      "id": "newsletter_subscribers.update",
+      "entity": "newsletter_subscribers",
+      "kind": "update",
+      "scopes": [
+        "newsletter_subscribers:write"
+      ],
+      "http": {
+        "method": "PATCH",
+        "path": "/api/agent/newsletter_subscribers/:id"
+      },
+      "inputSchemaId": "newsletter_subscribers.update.input",
+      "outputSchemaId": "crm.ItemEnvelope",
+      "sdkMethod": "crm.update",
+      "mcp": null,
+      "cli": {
+        "command": "crm update newsletter_subscribers"
+      }
+    },
+    {
+      "id": "organizations.merge",
+      "entity": "organizations",
+      "kind": "merge",
+      "scopes": [
+        "organizations:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/entities/organizations/merge"
+      },
+      "inputSchemaId": "organizations.merge.input",
+      "outputSchemaId": "crm.MergeResult",
+      "sdkMethod": "crm.merge",
+      "mcp": null,
+      "cli": {
+        "command": "crm merge organizations"
+      }
+    },
+    {
+      "id": "contacts.merge",
+      "entity": "contacts",
+      "kind": "merge",
+      "scopes": [
+        "contacts:write"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/entities/contacts/merge"
+      },
+      "inputSchemaId": "contacts.merge.input",
+      "outputSchemaId": "crm.MergeResult",
+      "sdkMethod": "crm.merge",
+      "mcp": null,
+      "cli": {
+        "command": "crm merge contacts"
+      }
+    },
+    {
+      "id": "organizations.contacts.list",
+      "entity": "organizations",
+      "kind": "related.list",
+      "scopes": [
+        "organizations:read",
+        "contacts:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/organizations/:id/related/contacts"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related organizations :id contacts"
+      }
+    },
+    {
+      "id": "organizations.leads.list",
+      "entity": "organizations",
+      "kind": "related.list",
+      "scopes": [
+        "organizations:read",
+        "leads:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/organizations/:id/related/leads"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related organizations :id leads"
+      }
+    },
+    {
+      "id": "organizations.projects.list",
+      "entity": "organizations",
+      "kind": "related.list",
+      "scopes": [
+        "organizations:read",
+        "projects:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/organizations/:id/related/projects"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related organizations :id projects"
+      }
+    },
+    {
+      "id": "organizations.licenses.list",
+      "entity": "organizations",
+      "kind": "related.list",
+      "scopes": [
+        "organizations:read",
+        "licenses:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/organizations/:id/related/licenses"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related organizations :id licenses"
+      }
+    },
+    {
+      "id": "organizations.signals_worksessions.list",
+      "entity": "organizations",
+      "kind": "related.list",
+      "scopes": [
+        "organizations:read",
+        "signals:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/organizations/:id/related/signals_worksessions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related organizations :id signals_worksessions"
+      }
+    },
+    {
+      "id": "contacts.organization.list",
+      "entity": "contacts",
+      "kind": "related.list",
+      "scopes": [
+        "contacts:read",
+        "organizations:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/contacts/:id/related/organization"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related contacts :id organization"
+      }
+    },
+    {
+      "id": "contacts.tasks.list",
+      "entity": "contacts",
+      "kind": "related.list",
+      "scopes": [
+        "contacts:read",
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/contacts/:id/related/tasks"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related contacts :id tasks"
+      }
+    },
+    {
+      "id": "contacts.interactions.list",
+      "entity": "contacts",
+      "kind": "related.list",
+      "scopes": [
+        "contacts:read",
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/contacts/:id/related/interactions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related contacts :id interactions"
+      }
+    },
+    {
+      "id": "contacts.events.list",
+      "entity": "contacts",
+      "kind": "related.list",
+      "scopes": [
+        "contacts:read",
+        "cms:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/contacts/:id/related/events"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related contacts :id events"
+      }
+    },
+    {
+      "id": "contacts.sources.list",
+      "entity": "contacts",
+      "kind": "related.list",
+      "scopes": [
+        "contacts:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/contacts/:id/related/sources"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related contacts :id sources"
+      }
+    },
+    {
+      "id": "licenses.offers.list",
+      "entity": "licenses",
+      "kind": "related.list",
+      "scopes": [
+        "licenses:read",
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/licenses/:id/related/offers"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related licenses :id offers"
+      }
+    },
+    {
+      "id": "leads.offers.list",
+      "entity": "leads",
+      "kind": "related.list",
+      "scopes": [
+        "leads:read",
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/leads/:id/related/offers"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related leads :id offers"
+      }
+    },
+    {
+      "id": "leads.licenses.list",
+      "entity": "leads",
+      "kind": "related.list",
+      "scopes": [
+        "leads:read",
+        "licenses:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/leads/:id/related/licenses"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related leads :id licenses"
+      }
+    },
+    {
+      "id": "leads.tasks.list",
+      "entity": "leads",
+      "kind": "related.list",
+      "scopes": [
+        "leads:read",
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/leads/:id/related/tasks"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related leads :id tasks"
+      }
+    },
+    {
+      "id": "leads.interactions.list",
+      "entity": "leads",
+      "kind": "related.list",
+      "scopes": [
+        "leads:read",
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/leads/:id/related/interactions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related leads :id interactions"
+      }
+    },
+    {
+      "id": "leads.projects.list",
+      "entity": "leads",
+      "kind": "related.list",
+      "scopes": [
+        "leads:read",
+        "projects:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/leads/:id/related/projects"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related leads :id projects"
+      }
+    },
+    {
+      "id": "projects.tasks.list",
+      "entity": "projects",
+      "kind": "related.list",
+      "scopes": [
+        "projects:read",
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/projects/:id/related/tasks"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related projects :id tasks"
+      }
+    },
+    {
+      "id": "projects.interactions.list",
+      "entity": "projects",
+      "kind": "related.list",
+      "scopes": [
+        "projects:read",
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/projects/:id/related/interactions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related projects :id interactions"
+      }
+    },
+    {
+      "id": "projects.milestones.list",
+      "entity": "projects",
+      "kind": "related.list",
+      "scopes": [
+        "projects:read",
+        "milestones:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/projects/:id/related/milestones"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related projects :id milestones"
+      }
+    },
+    {
+      "id": "projects.deliverables.list",
+      "entity": "projects",
+      "kind": "related.list",
+      "scopes": [
+        "projects:read",
+        "services:read",
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/projects/:id/related/deliverables"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related projects :id deliverables"
+      }
+    },
+    {
+      "id": "services.offers.list",
+      "entity": "services",
+      "kind": "related.list",
+      "scopes": [
+        "services:read",
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/services/:id/related/offers"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related services :id offers"
+      }
+    },
+    {
+      "id": "milestones.tasks.list",
+      "entity": "milestones",
+      "kind": "related.list",
+      "scopes": [
+        "milestones:read",
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/milestones/:id/related/tasks"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related milestones :id tasks"
+      }
+    },
+    {
+      "id": "signals_accounts.organization.list",
+      "entity": "signals_accounts",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "organizations:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_accounts/:id/related/organization"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_accounts :id organization"
+      }
+    },
+    {
+      "id": "signals_accounts.primary_contact.list",
+      "entity": "signals_accounts",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "contacts:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_accounts/:id/related/primary_contact"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_accounts :id primary_contact"
+      }
+    },
+    {
+      "id": "signals_accounts.tasks.list",
+      "entity": "signals_accounts",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "tasks:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_accounts/:id/related/tasks"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_accounts :id tasks"
+      }
+    },
+    {
+      "id": "signals_accounts.interactions.list",
+      "entity": "signals_accounts",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_accounts/:id/related/interactions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_accounts :id interactions"
+      }
+    },
+    {
+      "id": "signals_accounts.support_cases.list",
+      "entity": "signals_accounts",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "support_cases:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_accounts/:id/related/support_cases"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_accounts :id support_cases"
+      }
+    },
+    {
+      "id": "support_cases.interactions.list",
+      "entity": "support_cases",
+      "kind": "related.list",
+      "scopes": [
+        "support_cases:read",
+        "interactions:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/support_cases/:id/related/interactions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related support_cases :id interactions"
+      }
+    },
+    {
+      "id": "signals_accounts.work_sessions.list",
+      "entity": "signals_accounts",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_accounts/:id/related/work_sessions"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_accounts :id work_sessions"
+      }
+    },
+    {
+      "id": "signals_worksessions.organization.list",
+      "entity": "signals_worksessions",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "organizations:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_worksessions/:id/related/organization"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_worksessions :id organization"
+      }
+    },
+    {
+      "id": "signals_worksessions.workspace.list",
+      "entity": "signals_worksessions",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_worksessions/:id/related/workspace"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_worksessions :id workspace"
+      }
+    },
+    {
+      "id": "signals_worksessions.primary_contact.list",
+      "entity": "signals_worksessions",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "contacts:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_worksessions/:id/related/primary_contact"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_worksessions :id primary_contact"
+      }
+    },
+    {
+      "id": "signals_worksessions.offer.list",
+      "entity": "signals_worksessions",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "offers:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_worksessions/:id/related/offer"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_worksessions :id offer"
+      }
+    },
+    {
+      "id": "signals_worksessions.project.list",
+      "entity": "signals_worksessions",
+      "kind": "related.list",
+      "scopes": [
+        "signals:read",
+        "projects:read"
+      ],
+      "http": {
+        "method": "GET",
+        "path": "/api/agent/entities/signals_worksessions/:id/related/project"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.RelatedDataEnvelope",
+      "sdkMethod": "crm.related.list",
+      "mcp": null,
+      "cli": {
+        "command": "crm related signals_worksessions :id project"
+      }
+    },
+    {
+      "id": "contacts.events.link",
+      "entity": "contacts",
+      "kind": "related.link",
+      "scopes": [
+        "contacts:write",
+        "cms:read"
+      ],
+      "http": {
+        "method": "POST",
+        "path": "/api/agent/entities/contacts/:id/related/events/:relatedId"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.related.link",
+      "mcp": null,
+      "cli": {
+        "command": "crm link contacts :id events :relatedId"
+      }
+    },
+    {
+      "id": "organizations.contacts.unlink",
+      "entity": "organizations",
+      "kind": "related.unlink",
+      "scopes": [
+        "organizations:read",
+        "contacts:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/entities/organizations/:id/related/contacts/:relatedId"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.related.unlink",
+      "mcp": null,
+      "cli": {
+        "command": "crm unlink organizations :id contacts :relatedId"
+      }
+    },
+    {
+      "id": "organizations.leads.unlink",
+      "entity": "organizations",
+      "kind": "related.unlink",
+      "scopes": [
+        "organizations:read",
+        "leads:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/entities/organizations/:id/related/leads/:relatedId"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.related.unlink",
+      "mcp": null,
+      "cli": {
+        "command": "crm unlink organizations :id leads :relatedId"
+      }
+    },
+    {
+      "id": "organizations.projects.unlink",
+      "entity": "organizations",
+      "kind": "related.unlink",
+      "scopes": [
+        "organizations:read",
+        "projects:write"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/entities/organizations/:id/related/projects/:relatedId"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.related.unlink",
+      "mcp": null,
+      "cli": {
+        "command": "crm unlink organizations :id projects :relatedId"
+      }
+    },
+    {
+      "id": "contacts.events.unlink",
+      "entity": "contacts",
+      "kind": "related.unlink",
+      "scopes": [
+        "contacts:write",
+        "cms:read"
+      ],
+      "http": {
+        "method": "DELETE",
+        "path": "/api/agent/entities/contacts/:id/related/events/:relatedId"
+      },
+      "inputSchemaId": null,
+      "outputSchemaId": "crm.MutationResult",
+      "sdkMethod": "crm.related.unlink",
+      "mcp": null,
+      "cli": {
+        "command": "crm unlink contacts :id events :relatedId"
+      }
+    }
+  ],
+  "navigation": {
+    "schemaVersion": 1,
+    "topLevel": [
+      {
+        "id": "dashboard",
+        "label": "Dashboard",
+        "webPath": "/dashboard",
+        "symbol": "square.grid.2x2",
+        "availability": "available"
+      }
+    ],
+    "groups": [
+      {
+        "id": "accounts",
+        "label": "Accounts",
+        "items": [
+          {
+            "id": "organizations",
+            "label": "Organizations",
+            "webPath": "/dashboard/organizations",
+            "symbol": "building.2",
+            "entityId": "organizations",
+            "availability": "available"
+          },
+          {
+            "id": "contacts",
+            "label": "Contacts",
+            "webPath": "/dashboard/contacts",
+            "symbol": "person.2",
+            "entityId": "contacts",
+            "availability": "available"
+          },
+          {
+            "id": "leads",
+            "label": "Leads",
+            "webPath": "/dashboard/leads",
+            "symbol": "target",
+            "entityId": "leads",
+            "availability": "available"
+          },
+          {
+            "id": "offers",
+            "label": "Offers",
+            "webPath": "/dashboard/offers",
+            "symbol": "doc.text",
+            "entityId": "offers",
+            "availability": "available"
+          }
+        ]
+      },
+      {
+        "id": "delivery",
+        "label": "Delivery",
+        "items": [
+          {
+            "id": "projects",
+            "label": "Projects",
+            "webPath": "/dashboard/projects",
+            "symbol": "folder",
+            "entityId": "projects",
+            "availability": "available"
+          },
+          {
+            "id": "licenses",
+            "label": "Licenses",
+            "webPath": "/dashboard/licenses",
+            "symbol": "receipt",
+            "entityId": "licenses",
+            "availability": "available"
+          },
+          {
+            "id": "milestones",
+            "label": "Milestones",
+            "webPath": "/dashboard/milestones",
+            "symbol": "flag",
+            "entityId": "milestones",
+            "availability": "available"
+          },
+          {
+            "id": "services",
+            "label": "Services",
+            "webPath": "/dashboard/services",
+            "symbol": "square.stack.3d.up",
+            "entityId": "services",
+            "availability": "available"
+          }
+        ]
+      },
+      {
+        "id": "signals",
+        "label": "Signals",
+        "items": [
+          {
+            "id": "signals",
+            "label": "Workspaces",
+            "webPath": "/dashboard/signals",
+            "symbol": "radar",
+            "entityId": "signals_accounts",
+            "availability": "available"
+          },
+          {
+            "id": "signals-worksessions",
+            "label": "Work Sessions",
+            "webPath": "/dashboard/signals-worksessions",
+            "symbol": "rectangle.on.rectangle",
+            "entityId": "signals_worksessions",
+            "availability": "available"
+          }
+        ]
+      },
+      {
+        "id": "operations",
+        "label": "Operations",
+        "items": [
+          {
+            "id": "tasks",
+            "label": "Tasks",
+            "webPath": "/dashboard/tasks",
+            "symbol": "checkmark.square",
+            "entityId": "tasks",
+            "availability": "available"
+          },
+          {
+            "id": "interactions",
+            "label": "Interactions",
+            "webPath": "/dashboard/interactions",
+            "symbol": "bubble.left.and.bubble.right",
+            "entityId": "interactions",
+            "availability": "available"
+          },
+          {
+            "id": "readiness",
+            "label": "Readiness",
+            "webPath": "/dashboard/readiness",
+            "symbol": "chart.line.uptrend.xyaxis",
+            "entityId": "readiness_assessments",
+            "availability": "available"
+          },
+          {
+            "id": "policies",
+            "label": "Policies",
+            "webPath": "/dashboard/policies",
+            "symbol": "shield",
+            "entityId": "policies",
+            "availability": "available"
+          },
+          {
+            "id": "support-cases",
+            "label": "Support Cases",
+            "webPath": "/dashboard/support-cases",
+            "symbol": "lifepreserver",
+            "entityId": "support_cases",
+            "availability": "available"
+          },
+          {
+            "id": "subscribers",
+            "label": "Subscribers",
+            "webPath": "/dashboard/subscribers",
+            "symbol": "envelope",
+            "entityId": "newsletter_subscribers",
+            "availability": "available"
+          }
+        ]
+      }
+    ]
+  }
+}

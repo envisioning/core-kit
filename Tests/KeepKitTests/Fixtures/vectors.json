@@ -1,0 +1,59 @@
+{
+  "suite": "keep-v1",
+  "staff": {
+    "public_key": "BHKUoMRahMKhljtAATY-mf0W7OZmIBgNRk_a97u6wufUSREvrmhh2XhqLqPHBHakOR0Pm_2WGY2Kr906qauPkWA",
+    "private_key_pkcs8": "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg2YlErsTxU2ohHtpNIVpvdprbADBUiBHFuNQOU1nqIYmhRANCAARylKDEWoTCoZY7QAE2Ppn9FuzmZiAYDUZP2ve7usLn1EkRL65oYdl4ai6jxwR2pDkdD5v9lhmNiq_dOqmrj5Fg"
+  },
+  "recipient": {
+    "public_key": "BGLbPvLLwCJ8YrwmC_p0cDKmdUtI3OVlPxff7BKYmiPjCGDT6QIVB-lsPhMUsHZoYdgcWHguZ0W_eoe4LjMidjg",
+    "private_key_pkcs8": "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgIo4X4gtkyEDtF8lEqiUurSIZoKCzm7iItuI5Q26nPqmhRANCAARi2z7yy8AifGK8Jgv6dHAypnVLSNzlZT8X3-wSmJoj4whg0-kCFQfpbD4TFLB2aGHYHFh4LmdFv3qHuC4zInY4"
+  },
+  "vault": {
+    "id": "11111111-2222-4333-8444-555555555555",
+    "key": "dx2CVSVvpLXTM4kCIHo-f8APHT8wOzQo6F5VOfnxVmE",
+    "key_version": 3,
+    "wrapped_to_recipient": {
+      "ephemeral_public_key": "BJ6E1nFCqelrjJxHbGcpFr10S9nkRpIWtq16cdpkXZwM_wNQwt9FUK1ptgAX1opXmzjwFb0k5nbkGmV4fbpgQk8",
+      "iv": "zdM-IyUhATBea3wY",
+      "ciphertext": "fpXNk2hoY8Q4-LdTX2gbVzzxoYEt1AcylaYF3JxvfzAy21ppuhDBxFzefulJqtdL"
+    }
+  },
+  "item": {
+    "id": "66666666-7777-4888-8999-aaaaaaaaaaaa",
+    "body": {
+      "username": "ops@client.example",
+      "password": "correct horse battery staple",
+      "url": "https://db.client.example",
+      "notes": "line one\nline two — ünïcödé",
+      "totp": ""
+    },
+    "sealed": {
+      "iv": "KAVu7H8807uUTs9v",
+      "ciphertext": "AZKhWnWrtMNoP1f38zw4lzGM9lfRaH-rNGdxR8ffXfpyYEYW33O7zjWHEQalbCqQsYfOVthr0fh0q-StRUkQEpmOJekekO5zkmsetrpIZpDGGyYCRnXe1f-VAd6zMf31G04EHl_QrPU8tO8eMyZrPNOnkBpZORzJd2PIEkdLAcsQfC061xKS2h2d7vBZaSlMN6n6FRYVqtTOAxM5AkD1wQXoD-g4asyFd_1WvIfqAu79qiAF"
+    }
+  },
+  "passphrase": {
+    "value": "a passphrase for the vectors",
+    "wrapped": {
+      "iv": "6u8_29Yoy2iQ5olb",
+      "ciphertext": "EGegiQciQlez-yYyaWnnKGNm_X6qNhhcl1VhmYtI_B1038WyJHeVXaWGCJGr1JnjN7LPMnvbP_BsYaanCshDP4KolmqV2IdyCAbWAhy4iNeLq2uaJVc71HAJfMn-ZK-Xc5P6bwCtBaWp2cX-si5hMFFPTOsnmmQZkYCzd0Fnai9XPHDLGEwL65q7I5Ow17vnKH_zUS7uUR98nA"
+    },
+    "wrap": {
+      "method": "passphrase",
+      "pbkdf2_salt": "EDnpQKeJTYmFz0JpsXj8VKyGQoLO1_mHDNWDaCi_Ngw",
+      "pbkdf2_iterations": 600000
+    }
+  },
+  "prf": {
+    "output": "ysy8ESBFMzbW9d9nUDHka3PzdBR5MyS2Cyj8A2pPuhk",
+    "wrapped": {
+      "iv": "D8T3FXw5HAEBJAe8",
+      "ciphertext": "MSs20VC46Zos3TzTTdcGza9aLBwo3Y4wTc3HCjkdjordD0Kt16yitmjxGnhSeZn1WokrrpDhvHZaBdSk8lbYbuUTa01eap1ZNRBgKwmIaF7jgcNXlay_JNHMWSHd4C6g-osT4zKgcyeTfo_0Vo96z3ZGoKJp4trryO7QM8O-DRDHncm8b-T0Bv26-lhQycVzpFAJWdfN__RheQ"
+    },
+    "wrap": {
+      "method": "prf",
+      "credential_id": "vector-credential",
+      "hkdf_salt": "-NaSO1KC_xZ4utT3v4A7ARzKgXmVo38K0gEjmtgG2kY"
+    }
+  }
+}
