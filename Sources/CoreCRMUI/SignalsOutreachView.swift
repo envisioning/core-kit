@@ -12,8 +12,7 @@ private enum OutreachFilter: Hashable {
 ///
 /// This screen is a **triage list**. It shows who is in the funnel and the
 /// variables that shape the sendout (language, org type). A row opens the
-/// contact detail, where `SignalsOutreachSection` holds the actions (compose
-/// the localized draft, advance the status).
+/// contact detail, where `SignalsOutreachSection` moves the status.
 public struct SignalsOutreachView: View {
   let contract: CRMEntityContract
   let allContracts: [CRMEntityContract]
