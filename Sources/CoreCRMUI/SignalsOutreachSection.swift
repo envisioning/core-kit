@@ -18,54 +18,20 @@ public struct OutreachChip: View {
 
 /// Contextual outreach actions shown on a contact's detail page (injected by
 /// `EntityDetailView` when the contact is in the Signals funnel). This is where
-/// the compose + advance actions live, so the worklist stays a clean triage view.
+/// the status moves, so the worklist stays a clean triage view.
 struct SignalsOutreachSection: View {
   let record: CRMRecord
   let repository: CRMRepository
   var onToast: (String) -> Void
   var onChanged: () -> Void
 
-  @Environment(\.openURL) private var openURL
   @State private var busy = false
 
   private var status: String { record["signals_outreach_status"]?.stringValue ?? "" }
-  private var organization: [String: JSONValue]? { record["organization"]?.objectValue }
-  private var isExistingClient: Bool { organization?["is_existing_client"]?.boolValue ?? false }
-  private var isPartner: Bool { organization?["is_partner"]?.boolValue ?? false }
-
-  private var audience: SignalsAudience {
-    SignalsOutreach.audience(isExistingClient: isExistingClient, isPartner: isPartner)
-  }
-
-  private var draft: SignalsMailDraft? {
-    SignalsOutreach.mailDraft(
-      name: record["name"]?.stringValue ?? "",
-      email: record["email"]?.stringValue,
-      corporateEmail: record["corporate_email"]?.stringValue,
-      organizationName: organization?["name"]?.stringValue,
-      language: record["preferred_language"]?.stringValue ?? "en",
-      isExistingClient: isExistingClient,
-      isPartner: isPartner)
-  }
 
   public var body: some View {
     Section("Signals outreach") {
       LabeledContent("Status", value: SignalsOutreach.statusLabel(status))
-      LabeledContent("Approach") {
-        HStack(spacing: 6) {
-          OutreachChip(text: (record["preferred_language"]?.stringValue ?? "en").uppercased())
-          OutreachChip(text: SignalsOutreach.audienceLabel(audience))
-        }
-      }
-
-      if let draft, let url = draft.mailtoURL {
-        Button {
-          openURL(url)
-        } label: {
-          Label("Compose email", systemImage: "envelope")
-        }
-        .tint(.primary)
-      }
 
       if let next = SignalsOutreach.nextStatus(after: status) {
         Button {
