@@ -214,7 +214,7 @@ struct DocumentRow: View {
 
   var body: some View {
     HStack(alignment: .top, spacing: 10) {
-      Image(systemName: document.isLinkSave ? "link" : document.kind == "pdf" ? "doc.richtext" : document.transcript ? "text.quote" : "doc.text")
+      Image(systemName: document.isLinkSave ? (document.linkType ?? .other).systemImage : document.kind == "pdf" ? "doc.richtext" : document.transcript ? "text.quote" : "doc.text")
         .foregroundStyle(.secondary)
         .frame(width: 18)
         .padding(.top, 2)
@@ -224,9 +224,18 @@ struct DocumentRow: View {
           if let category = document.category {
             Text(categories.label(for: category)).font(.caption).foregroundStyle(.secondary)
           } else if let link = document.link {
-            Text(link.site).font(.caption).foregroundStyle(.secondary).lineLimit(1)
+            Text([document.linkType?.label, link.site].compactMap { $0 }.joined(separator: " · "))
+              .font(.caption).foregroundStyle(.secondary).lineLimit(1)
           }
           Text(subtitle).font(.footnote).foregroundStyle(.secondary).lineLimit(1)
+        }
+        // A save is outside knowledge: whether the page was read, and the
+        // notes document it belongs to.
+        if let link = document.link {
+          LinkMarks(link: link)
+          if let notes = link.notesDocuments?.first {
+            LinkNotesLine(notes: notes, onOpen: nil)
+          }
         }
         if !document.subjects.isEmpty {
           SubjectChips(subjects: document.subjects, names: subjectNames)
