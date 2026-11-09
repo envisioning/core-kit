@@ -46,11 +46,18 @@ public struct DocsLinkSave: Codable, Hashable, Sendable {
   public let fetchStatus: String
   public let fetchError: String?
   public let fetchedAt: String?
+  /// The article kept only what the page shows without a subscription.
+  /// Docs reads it from the body. False from a Docs older than the field.
+  @DocsDefaultFalse public private(set) var paywalled: Bool
+  /// The documents the notes point at by permalink, in order: the notes
+  /// document the save belongs to. Nil from a Docs older than the field.
+  public let notesDocuments: [DocsLinkNotesDocument]?
 
   public init(
     url: String, canonicalUrl: String, siteName: String? = nil, description: String? = nil, hasImage: Bool = false,
     imageCount: Int? = nil, firstImageId: String? = nil,
-    fetchStatus: String = "ok", fetchError: String? = nil, fetchedAt: String? = nil
+    fetchStatus: String = "ok", fetchError: String? = nil, fetchedAt: String? = nil,
+    paywalled: Bool = false, notesDocuments: [DocsLinkNotesDocument]? = nil
   ) {
     self.url = url
     self.canonicalUrl = canonicalUrl
@@ -62,7 +69,12 @@ public struct DocsLinkSave: Codable, Hashable, Sendable {
     self.fetchStatus = fetchStatus
     self.fetchError = fetchError
     self.fetchedAt = fetchedAt
+    _paywalled = DocsDefaultFalse(wrappedValue: paywalled)
+    self.notesDocuments = notesDocuments
   }
+
+  /// The site did not answer: the URL is kept, the page was not read.
+  public var pageNotRead: Bool { fetchStatus == "failed" }
 
   /// The site name, or the host when the page named none.
   public var site: String {
@@ -73,6 +85,17 @@ public struct DocsLinkSave: Codable, Hashable, Sendable {
 
   /// Where Open goes: the page the person saved.
   public var openURL: URL? { URL(string: url) }
+}
+
+/// A document a save's notes point at (`link.notes_documents`).
+public struct DocsLinkNotesDocument: Codable, Hashable, Identifiable, Sendable {
+  public let id: String
+  public let title: String
+
+  public init(id: String, title: String) {
+    self.id = id
+    self.title = title
+  }
 }
 
 /// The `source_kind` that marks a link save. Not a category: Docs cannot add

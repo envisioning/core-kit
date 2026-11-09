@@ -158,6 +158,10 @@ public struct DocumentEditor: View {
                 onOpenDocument?(target.id, target.title)
                 return .handled
               })
+            // A notes document lists the saves whose notes point at it.
+            if !document.isLinkSave && document.sourceSystem == "native" {
+              SavedLinksSection(documentID: document.id, client: model.client, onOpenDocument: onOpenDocument)
+            }
             // Comments read under the text (meet#175 slice 3). A comment is
             // made on the rendered page, never beside the markdown.
             Divider()
@@ -386,7 +390,9 @@ public struct DocumentEditor: View {
       meta(document)
 
       if document.isLinkSave {
-        LinkHeader(document: document, client: model.client, refetch: linkRefetch) { model.apply(shared: $0) }
+        LinkHeader(document: document, client: model.client, refetch: linkRefetch, onOpenDocument: onOpenDocument) {
+          model.apply(shared: $0)
+        }
         DocumentImagesStrip(
           documentID: document.id, images: document.images ?? [], client: model.client, editable: document.editable
         ) {
